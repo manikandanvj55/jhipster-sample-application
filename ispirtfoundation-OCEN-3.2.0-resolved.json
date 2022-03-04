@@ -1,0 +1,6267 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "OCEN API",
+    "description": "Contributed by Ujjwal Gupta, Avinash Verma, Venkatesh Kawarthapu, Yash Gehi and Harsharanga Patil",
+    "version": "3.2.0"
+  },
+  "servers": [
+    {
+      "url": "https://integ-expresscheckout-api.juspay.in/credit/mockService/api"
+    }
+  ],
+  "tags": [
+    {
+      "name": "Loan Application APIs"
+    },
+    {
+      "name": "Consent APIs"
+    },
+    {
+      "name": "Offers APIs"
+    },
+    {
+      "name": "Loan Acceptance  APIs"
+    },
+    {
+      "name": "Grant Loan APIs"
+    },
+    {
+      "name": "Repayment APIs"
+    },
+    {
+      "name": "Disbursement APIs"
+    },
+    {
+      "name": "Meta APIs"
+    }
+  ],
+  "paths": {
+    "/v3.3/loanApplication/createLoanApplicationsRequest": {
+      "post": {
+        "tags": [
+          "Loan Application APIs"
+        ],
+        "summary": "Create Loan Application Request",
+        "requestBody": {
+          "content": {
+            "application/json;charset=utf-8": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateLoanApplicationRequest"
+              },
+              "example": {
+                "metadata": {
+                  "version": "1.0",
+                  "timestamp": "2018-12-06T11:39:57.153Z",
+                  "traceId": "e8cc6822bd4bbb4eb1b9e1b4996fbff8acb",
+                  "orgId": "LSP007"
+                },
+                "requestId": "e8cc6822bd4bbb4eb1b9e1b4996fbff8acb",
+                "loanApplications": [
+                  {
+                    "createdDate": "2020-03-01T00:00:00Z",
+                    "loanApplicationId": "e8cc6822bd4bbb4eb1b9e1b4996fbff8acb",
+                    "type": "CASHFLOW",
+                    "borrower": {
+                      "primaryId": "CPAA1234A",
+                      "primaryIdType": "PAN",
+                      "additionalIdentifiers": [],
+                      "name": "John doe",
+                      "category": "ORGANIZATION",
+                      "contactDetails": [
+                        {
+                          "type": "PRIMARY",
+                          "phone": "7777777777",
+                          "email": "johndoe@defenterprises",
+                          "address": {
+                            "co": "<care of>",
+                            "hba": "<House/Building/Apartment>",
+                            "srl": "<Street/Road/Lane>",
+                            "landmark": "",
+                            "als": "<Area/Locality/Sector>",
+                            "vtc": "<Village/Town/City>",
+                            "pincode": "",
+                            "po": "",
+                            "district": "",
+                            "state": "",
+                            "country": "",
+                            "url": "<digital address>",
+                            "latitude": "",
+                            "longitude": ""
+                          }
+                        }
+                      ],
+                      "documents": [
+                        {
+                          "format": "JSON",
+                          "reference": "b8cc6822bd4bbb4eb1b9e1b4996fbff8acb",
+                          "source": "GSTN",
+                          "sourceIdentifier": "GSTN",
+                          "type": "GSTN_PROFILE",
+                          "isDataInline": true,
+                          "data": "eyJzdGpDZCI6IkFQMDAzIiwibGdubSI6Ik1TIENPUlBPUkFUSU9OIiwic3RqIjoiQkNQIEtPRElLT05EQSIsImR0eSI6IlJlZ3VsYXIiLCJjeGR0IjoiIiwiZ3N0aW4iOiIwNUFCTlRZMzI5MFA4WkEiLCJuYmEiOlsiQm9uZGVkIFdhcmVob3VzZSIsIkVPVSAvIFNUUCAvIEVIVFAiLCJGYWN0b3J5IC8gTWFudWZhY3R1cmluZyIsIklucHV0IFNlcnZpY2UgRGlzdHJpYnV0b3IgKElTRCkiLCJMZWFzaW5nIEJ1c2luZXNzIl0sImxzdHVwZHQiOiIwNS8wMS8yMDE3IiwicmdkdCI6IjA1LzA1LzIwMTciLCJjdGIiOiJGb3JlaWduIExMUCIsInN0cyI6IlByb3Zpc2lvbmFsIiwiY3RqQ2QiOiJBUDAwNCIsImN0aiI6IkJDUCBUSFVNTUFLVU5UQSIsInRyYWRlTmFtIjoiQUxUT04gUExBU1RJQyBQUklWQVRFIExURCIsImFkYWRyIjpbeyJhZGRyIjp7ImJubSI6IkVMUEhJTlNUT05FIEJVSUxESU5HIiwic3QiOiIxMCwgVkVFUiBOQVJJTUFOIFJPQUQiLCJsb2MiOiJGT1JUIiwiYm5vIjoiMTAiLCJzdGNkIjoiUmFqYXN0aGFuIiwiZmxubyI6IjFTVCBGTE9PUiIsImx0IjoiNzQuMjE3OSIsImxnIjoiMjcuMDIzOCIsInBuY2QiOiI0MDAwMDEifSwibnRyIjpbIldob2xlc2FsZSBCdXNpbmVzcyJdfV0sInByYWRyIjp7ImFkZHIiOnsiYm5tIjoiS0FUR0FSQSBIT1VTRSIsInN0IjoiMTUsIEwgSkFHTU9IQU5EQVMgTUFSRyIsImxvYyI6Ik1BTEFCQVIgSElMTCIsImJubyI6IjUiLCJzdGNkIjoiTWFoYXJhc2h0cmEiLCJmbG5vIjoiNFRIIEZMT09SIiwibHQiOiI3NC4yMTc5IiwibGciOiIyNy4wMjM4IiwicG5jZCI6IjQwMDAwNiJ9LCJudHIiOlsiV2hvbGVzYWxlIEJ1c2luZXNzIl19fQ=="
+                        }
+                      ]
+                    },
+                    "collaterals": [
+                      {
+                        "collateralPrimaryId": "<GSTIN>_<INVOICENUM>",
+                        "collateralPrimaryIdType": "GST_INVOICE",
+                        "type": "GST_INVOICE",
+                        "additionalIdentifiers": [],
+                        "valuation": {
+                          "value": "",
+                          "currency": "",
+                          "date": "",
+                          "source": "GSTN"
+                        },
+                        "parties": [],
+                        "documents": [
+                          {
+                            "format": "JSON",
+                            "reference": "e8cc6822bd4bbb4eb1b9e1b4996fbff8acb",
+                            "source": "GSTN",
+                            "sourceIdentifier": "GSTN",
+                            "type": "GSTN_B2B_INVOICE",
+                            "isDataInline": true,
+                            "data": "eyJjdGluIjoiMDFBQUJDRTIyMDdSMVo1IiwiY2ZzIjoiWSIsImludiI6W3siY2hrc3VtIjoiQkJVSUJVSVVJSktLQkpLR1VZRlRGR1VZIiwidXBkYnkiOiJTIiwiaW51bSI6IlMwMDg0MDAiLCJpZHQiOiIyNC0xMS0yMDE2IiwidmFsIjo3MjkyNDguMTYsInBvcyI6IjA2IiwicmNocmciOiJOIiwiZXRpbiI6IjAxQUFCQ0U1NTA3UjFaNCIsImludl90eXAiOiJSIiwiY2ZsYWciOiJOIiwiZGlmZl9wZXJjZW50IjowLjY1LCJvcGQiOiIyMDE2LTEyIiwiaXRtcyI6W3sibnVtIjoxLCJpdG1fZGV0Ijp7InJ0Ijo1LCJ0eHZhbCI6MTAwMDAsImlhbXQiOjMyNSwiY2FtdCI6MCwic2FtdCI6MCwiY3NhbXQiOjEwfX1dfV19"
+                          }
+                        ]
+                      }
+                    ],
+                    "guarantors": [],
+                    "applicants": [
+                      {
+                        "primaryId": "9898989898",
+                        "primaryIdType": "MOBILE"
+                      }
+                    ],
+                    "terms": {
+                      "requestedAmount": "50000.00",
+                      "currency": "INR"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "applic  ation/json;charset=utf-8": {
+                "schema": {
+                  "$ref": "#/components/schemas/Ack"
+                },
+                "example": {
+                  "ack": {
+                    "error": "0",
+                    "traceId": "c8cc6822bd4bbb4eb1b9e1b4996fbff8acb",
+                    "timestamp": "2018-12-06T11:39:57.153Z"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid `body`"
+          }
+        }
+      }
+    },
+    "/v3.3/loanApplication/createLoanApplicationsResponse": {
+      "post": {
+        "tags": [
+          "Loan Application APIs"
+        ],
+        "summary": "Create Loan Application Response",
+        "requestBody": {
+          "content": {
+            "application/json;charset=utf-8": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateLoanApplicationResponse"
+              },
+              "example": {
+                "metadata": {
+                  "version": "1.0",
+                  "timestamp": "2018-12-06T11:39:57.153Z",
+                  "traceId": "e8cc6822bd4bbb4eb1b9e1b4996fbff8acb",
+                  "orgId": "LSP007"
+                },
+                "response": {
+                  "error": "0"
+                },
+                "requestId": "e8cc6822bd4bbb4eb1b9e1b4996fbff8acb",
+                "loanApplications": [
+                  {
+                    "loanApplicationId": "e8cc6822bd4bbb4eb1b9e1b4996fbff8acb",
+                    "lender": {
+                      "primaryId": "AWW PA7645M",
+                      "primaryIdType": "PAN",
+                      "additionalIdentifiers": [],
+                      "name": "ABC Bank",
+                      "category": "ORGANIZATION",
+                      "contactDetails": [],
+                      "documents": []
+                    },
+                    "loanApplicationStatus": "PROCESSING"
+                  }
+                ]
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json;charset=utf-8": {
+                "schema": {
+                  "$ref": "#/components/schemas/Ack"
+                },
+                "example": {
+                  "ack": {
+                    "error": "0",
+                    "traceId": "d8cc6822bd4bbb4eb1b9e1b4996fbff8acb",
+                    "timestamp": "2018-12-06T11:39:57.153Z"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid `body`"
+          }
+        }
+      }
+    },
+    "/v3.3/offer/generateOffersRequest": {
+      "post": {
+        "tags": [
+          "Offers APIs"
+        ],
+        "summary": "Generate Offers Request",
+        "requestBody": {
+          "content": {
+            "application/json;charset=utf-8": {
+              "schema": {
+                "$ref": "#/components/schemas/GenerateOfferRequest"
+              },
+              "example": {
+                "metadata": {
+                  "version": "1.0",
+                  "timestamp": "2018-12-06T11:39:57.153Z",
+                  "traceId": "s8cc6822bd4bbb4eb1b9e1b4996fbff8acb",
+                  "orgId": "LSP007"
+                },
+                "requestId": "t8cc6822bd4bbb4eb1b9e1b4996fbff8acb",
+                "loanApplicationIds": [
+                  "t8cc6822bd4bbb4eb1b9e1b4996fbff8acb"
+                ]
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json;charset=utf-8": {
+                "schema": {
+                  "$ref": "#/components/schemas/Ack"
+                },
+                "example": {
+                  "ack": {
+                    "error": "0",
+                    "traceId": "v8cc6822bd4bbb4eb1b9e1b4996fbff8acb",
+                    "timestamp": "2018-12-06T11:39:57.153Z"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid `body`"
+          }
+        }
+      }
+    },
+    "/v3.3/offer/generateOffersResponse": {
+      "post": {
+        "tags": [
+          "Offers APIs"
+        ],
+        "summary": "Generate Offers Response",
+        "requestBody": {
+          "content": {
+            "application/json;charset=utf-8": {
+              "schema": {
+                "$ref": "#/components/schemas/GenerateOfferResponse"
+              },
+              "example": {
+                "metadata": {
+                  "version": "1.0",
+                  "timestamp": "2018-12-06T11:39:57.153Z",
+                  "traceId": "w8cc6822bd4bbb4eb1b9e1b4996fbff8acb",
+                  "orgId": "LSP007"
+                },
+                "response": {
+                  "error": "0"
+                },
+                "requestId": "x8cc6822bd4bbb4eb1b9e1b4996fbff8acb",
+                "loanApplications": [
+                  {
+                    "loanApplicationId": "x8cc6822bd4bbb4eb1b9e1b4996fbff8acb",
+                    "kyc": {
+                      "verificationStatus": "PENDING"
+                    },
+                    "offers": [
+                      {
+                        "id": "y8cc6822bd4bbb4eb1b9e1b4996fbff8acb",
+                        "description": "A short description of the offer",
+                        "validTill": "2018-12-06T00:00:00.000Z",
+                        "terms": {
+                          "requestedAmount": "50000.00",
+                          "currency": "INR",
+                          "sanctionedAmount": "50000.00",
+                          "interestType": "FIXED",
+                          "interestRate": "12.00",
+                          "interestAmount": "6000.00",
+                          "totalAmount": "56000.00",
+                          "tenure": {
+                            "duration": "3",
+                            "unit": "MONTH"
+                          },
+                          "legalAgreement": {
+                            "type": "TEXT",
+                            "data": "<Base64 Encoded Data>"
+                          },
+                          "charges": {
+                            "prepayment": {
+                              "chargeType": "RATE_BASED",
+                              "description": "Description of charge calculation",
+                              "data": {
+                                "rate": "6",
+                                "applicableParameter": "TOTAL_LOAN_AMOUNT"
+                              }
+                            },
+                            "bounce": {
+                              "chargeType": "FIXED_AMOUNT",
+                              "description": "Description of charge calculation",
+                              "data": {
+                                "amount": "3000.00"
+                              }
+                            },
+                            "latePayment": {
+                              "chargeType": "FIXED_AMOUNT",
+                              "description": "Description of charge calculation",
+                              "data": {
+                                "amount": "3000.00"
+                              }
+                            },
+                            "processing": {
+                              "chargeType": "FIXED_AMOUNT",
+                              "description": "Description of charge calculation",
+                              "data": {
+                                "amount": "3000.00"
+                              }
+                            }
+                          }
+                        },
+                        "disbursement": {
+                          "plans": [
+                            {
+                              "id": "hb8c6822bd4bbb4eb1b9e1b4996fbff8acb",
+                              "automatic": false,
+                              "scheduleType": "ONE_TIME",
+                              "noOfInstallments": "1",
+                              "totalAmount": "10000.00",
+                              "status": "INACTIVE"
+                            }
+                          ],
+                          "accountDetails": [
+                            {
+                              "id": "hb8c6822bd4bbb4eb1b9e1b4996fbff8acb",
+                              "accountDataType": "ACCOUNT",
+                              "data": {
+                                "accountType": "CURRENT",
+                                "maskedAccountNumber": "XXXXXXXXX9090"
+                              }
+                            }
+                          ]
+                        },
+                        "repayment": {
+                          "plans": [
+                            {
+                              "id": "a8cc6822bd4bbb4eb1b9e1b4996fbff8acb",
+                              "automatic": false,
+                              "scheduleType": "ONE_TIME",
+                              "payNowAllowed": false,
+                              "changeMethodAllowed": false,
+                              "noOfInstallments": "1",
+                              "tenure": {
+                                "duration": "1",
+                                "unit": "MONTH"
+                              },
+                              "title": "Title of the repayment plan",
+                              "shortDescription": "short description of repayment plan",
+                              "url": "lender url showing repayment details",
+                              "penalty": "0.00",
+                              "principal": "9000.00",
+                              "interestAmount": "1000.00",
+                              "totalAmount": "10000.00",
+                              "status": "INACTIVE"
+                            }
+                          ]
+                        }
+                      }
+                    ],
+                    "loanApplicationStatus": "OFFERED"
+                  }
+                ]
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json;charset=utf-8": {
+                "schema": {
+                  "$ref": "#/components/schemas/Ack"
+                },
+                "example": {
+                  "ack": {
+                    "error": "0",
+                    "traceId": "b8cc6822bd4bbb4eb1b9e1b4996fbff8acb",
+                    "timestamp": "2018-12-06T11:39:57.153Z"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid `body`"
+          }
+        }
+      }
+    },
+    "/v3.3/offer/setOfferRequest": {
+      "post": {
+        "tags": [
+          "Offers APIs"
+        ],
+        "summary": "Set Offers Request",
+        "requestBody": {
+          "content": {
+            "application/json;charset=utf-8": {
+              "schema": {
+                "$ref": "#/components/schemas/SetOfferRequest"
+              },
+              "example": {
+                "metadata": {
+                  "version": "0.1.0",
+                  "timestamp": "2018-12-06T11:39:57.153Z",
+                  "traceId": "c8cc6822bd4bbb4eb1b9e1b4996fbff8acb",
+                  "orgId": "LSP007"
+                },
+                "requestId": "12c1ds6822bd4bbb4eb1b9e1b4996fbff8acb",
+                "loanApplicationId": "d8cc6822bd4bbb4eb1b9e1b4996fbff8acb",
+                "offer": {
+                  "id": "y8cc6822bd4bbb4eb1b9e1b4996fbff8acb"
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json;charset=utf-8": {
+                "schema": {
+                  "$ref": "#/components/schemas/Ack"
+                },
+                "example": {
+                  "ack": {
+                    "error": "0",
+                    "traceId": "e8cc6822bd4bbb4eb1b9e1b4996fbff8acb",
+                    "timestamp": "2018-12-06T11:39:57.153Z"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid `body`"
+          }
+        }
+      }
+    },
+    "/v3.3/offer/setOfferResponse": {
+      "post": {
+        "tags": [
+          "Offers APIs"
+        ],
+        "summary": "Set Offers Response",
+        "requestBody": {
+          "content": {
+            "application/json;charset=utf-8": {
+              "schema": {
+                "$ref": "#/components/schemas/SetOfferResponse"
+              },
+              "example": {
+                "metadata": {
+                  "version": "1.0",
+                  "timestamp": "2018-12-06T11:39:57.153Z",
+                  "traceId": "w8cc6822bd4bbb4eb1b9e1b4996fbff8acb",
+                  "orgId": "LSP007"
+                },
+                "response": {
+                  "error": "0"
+                },
+                "requestId": "w8cc6822bd4bbb4eb1b9e1b4996fbff8acb",
+                "loanApplicationId": "w8cc6822bd4bbb4eb1b9e1b4996fbff8acb",
+                "loanApplicationStatus": "OFFER_ACCEPTED",
+                "kyc": {
+                  "url": "http://kyc.bank.url",
+                  "individualKYC": {
+                    "status": "SUCCESS",
+                    "type": "CKYC",
+                    "data": {
+                      "name": "Jane Doe",
+                      "dob": "1990-12-21"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json;charset=utf-8": {
+                "schema": {
+                  "$ref": "#/components/schemas/Ack"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid `body`"
+          }
+        }
+      }
+    },
+    "/v3.3/loan/triggerLoanAcceptanceRequest": {
+      "post": {
+        "tags": [
+          "Loan Acceptance  APIs"
+        ],
+        "summary": "Trigger Loan Acceptance Request",
+        "requestBody": {
+          "content": {
+            "application/json;charset=utf-8": {
+              "schema": {
+                "$ref": "#/components/schemas/LenderOTPRequest"
+              },
+              "example": {
+                "metadata": {
+                  "version": "1.0",
+                  "timestamp": "2018-12-06T11:39:57.153Z",
+                  "traceId": "e8cc6822bd4bbb4eb1b9e1b4996fbff8acb",
+                  "orgId": "LSP007"
+                },
+                "requestId": "e8cc6822bd4bbb4eb1b9e1b4996fbff8acb",
+                "loanApplicationIds": [
+                  "e8cc6822bd4bbb4eb1b9e1b4996fbff8acb"
+                ],
+                "credBlock": {
+                  "type": "OTP",
+                  "data": {
+                    "appToken": "0aBCD7DMr7s"
+                  }
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json;charset=utf-8": {
+                "schema": {
+                  "$ref": "#/components/schemas/Ack"
+                },
+                "example": {
+                  "ack": {
+                    "error": "0",
+                    "traceId": "e8cc6822bd4bbb4eb1b9e1b4996fbff8acb",
+                    "timestamp": "2018-12-06T11:39:57.153Z"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid `body`"
+          }
+        }
+      }
+    },
+    "/v3.3/loan/triggerLoanAcceptanceResponse": {
+      "post": {
+        "tags": [
+          "Loan Acceptance  APIs"
+        ],
+        "summary": "Trigger Loan Acceptance Response",
+        "requestBody": {
+          "content": {
+            "application/json;charset=utf-8": {
+              "schema": {
+                "$ref": "#/components/schemas/LenderOTPResponse"
+              },
+              "example": {
+                "metadata": {
+                  "version": "1.0",
+                  "timestamp": "2018-12-06T11:39:57.153Z",
+                  "traceId": "e8cc6822bd4bbb4eb1b9e1b4996fbff8acb",
+                  "orgId": "LSP007"
+                },
+                "response": {
+                  "error": "0"
+                },
+                "requestId": "e8cc6822bd4bbb4eb1b9e1b4996fbff8acb",
+                "credBlock": {
+                  "type": "OTP",
+                  "data": {
+                    "otpSessionKey": "e8cc6822bd4bbb4eb1b9e1b4996fbff8acb",
+                    "maskedPhoneNumber": "xxxxxx9090"
+                  }
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json;charset=utf-8": {
+                "schema": {
+                  "$ref": "#/components/schemas/Ack"
+                },
+                "example": {
+                  "ack": {
+                    "error": "0",
+                    "traceId": "e8cc6822bd4bbb4eb1b9e1b4996fbff8acb",
+                    "timestamp": "2018-12-06T11:39:57.153Z"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid `body`"
+          }
+        }
+      }
+    },
+    "/v3.3/loan/verifyLoanAcceptanceRequest": {
+      "post": {
+        "tags": [
+          "Loan Acceptance  APIs"
+        ],
+        "summary": "Verify Loan Acceptance Request",
+        "requestBody": {
+          "content": {
+            "application/json;charset=utf-8": {
+              "schema": {
+                "$ref": "#/components/schemas/VerifyLenderOTPRequest"
+              },
+              "example": {
+                "metadata": {
+                  "version": "1.0",
+                  "timestamp": "2018-12-06T11:39:57.153Z",
+                  "traceId": "e8cc6822bd4bbb4eb1b9e1b4996fbff8acb",
+                  "orgId": "LSP007"
+                },
+                "requestId": "es1c6822bd4bbb4eb1b9e1b4996fbff8acb",
+                "credBlock": {
+                  "type": "OTP",
+                  "data": {
+                    "otpSessionKey": "e8cc6822bd4bbb4eb1b9e1b4996fbff8acb",
+                    "otp": "689451"
+                  }
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json;charset=utf-8": {
+                "schema": {
+                  "$ref": "#/components/schemas/Ack"
+                },
+                "example": {
+                  "ack": {
+                    "error": "0",
+                    "traceId": "e8cc6822bd4bbb4eb1b9e1b4996fbff8acb",
+                    "timestamp": "2018-12-06T11:39:57.153Z"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid `body`"
+          }
+        }
+      }
+    },
+    "/v3.3/loan/verifyLoanAcceptanceResponse": {
+      "post": {
+        "tags": [
+          "Loan Acceptance  APIs"
+        ],
+        "summary": "Verify Loan Acceptance Response",
+        "requestBody": {
+          "content": {
+            "application/json;charset=utf-8": {
+              "schema": {
+                "$ref": "#/components/schemas/VerifyLenderOTPResponse"
+              },
+              "example": {
+                "metadata": {
+                  "version": "1.0",
+                  "timestamp": "2018-12-06T11:39:57.153Z",
+                  "traceId": "e8cc6822bd4bbb4eb1b9e1b4996fbff8acb",
+                  "orgId": "LSP007"
+                },
+                "response": {
+                  "error": "0"
+                },
+                "requestId": "e8cc6822bd4bbb4eb1b9e1b4996fbff8acc",
+                "credBlock": {
+                  "type": "OTP",
+                  "data": {
+                    "otpSessionKey": "e8cc6822bd4bbb4eb1b9e1b4996fbff8acb",
+                    "status": "SUCCESS"
+                  }
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json;charset=utf-8": {
+                "schema": {
+                  "$ref": "#/components/schemas/Ack"
+                },
+                "example": {
+                  "ack": {
+                    "error": "0",
+                    "traceId": "e8cc6822bd4bbb4eb1b9e1b4996fbff8acb",
+                    "timestamp": "2018-12-06T11:39:57.153Z"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid `body`"
+          }
+        }
+      }
+    },
+    "/v3.3/disbursement/setDisbursementAccountRequest": {
+      "post": {
+        "tags": [
+          "Disbursement APIs"
+        ],
+        "summary": "Set Disbursement Account Request",
+        "requestBody": {
+          "content": {
+            "application/json;charset=utf-8": {
+              "schema": {
+                "$ref": "#/components/schemas/SetDisbursementAccountRequest"
+              },
+              "example": {
+                "metadata": {
+                  "version": "1.0",
+                  "timestamp": "2018-12-06T11:39:57.153Z",
+                  "traceId": "e8cc6822bd4bbb4eb1b9e1b4996fbff8acb",
+                  "orgId": "LSP007"
+                },
+                "requestId": "e8cc6822bd4bbb4eb1b9e1b4996fbff8acb",
+                "loanApplicationId": "e8cc6822bd4bbb4eb1b9e1b4996fbff8acb",
+                "account": {
+                  "id": "e8cc6822bd4bbb4eb1b9e1b4996fbff8acb",
+                  "accountDataType": "ACCOUNT",
+                  "data": {}
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json;charset=utf-8": {
+                "schema": {
+                  "$ref": "#/components/schemas/Ack"
+                },
+                "example": {
+                  "ack": {
+                    "error": "0",
+                    "traceId": "h8cc6822bd4bbb4eb1b9e1b4996fbff8acb",
+                    "timestamp": "2018-12-06T11:39:57.153Z"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid `body`"
+          }
+        }
+      }
+    },
+    "/v3.3/disbursement/setDisbursementAccountResponse": {
+      "post": {
+        "tags": [
+          "Disbursement APIs"
+        ],
+        "summary": "Set Disbursement Account Response",
+        "requestBody": {
+          "content": {
+            "application/json;charset=utf-8": {
+              "schema": {
+                "$ref": "#/components/schemas/SetDisbursementAccountResponse"
+              },
+              "example": {
+                "metadata": {
+                  "version": "1.0",
+                  "timestamp": "2018-12-06T11:39:57.153Z",
+                  "traceId": "e8cc6822bd4bbb4eb1b9e1b4996fbff8acb",
+                  "orgId": "LSP007"
+                },
+                "response": {
+                  "error": "0"
+                },
+                "requestId": "e8cc6822bd4bbb4eb1b9e1b4996fbff8acb",
+                "account": {
+                  "id": "a8cc6822bd4bbb4eb1b9e1b4996fbff8acb",
+                  "status": "ACTIVE",
+                  "accountDataType": "ACCOUNT",
+                  "data": {}
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json;charset=utf-8": {
+                "schema": {
+                  "$ref": "#/components/schemas/Ack"
+                },
+                "example": {
+                  "ack": {
+                    "error": "0",
+                    "traceId": "h8cc6822bd4bbb4eb1b9e1b4996fbff8acb",
+                    "timestamp": "2018-12-06T11:39:57.153Z"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid `body`"
+          }
+        }
+      }
+    },
+    "/v3.3/disbursement/triggerDisbursementRequest": {
+      "post": {
+        "tags": [
+          "Disbursement APIs"
+        ],
+        "summary": "Trigger Disbursement Request",
+        "requestBody": {
+          "content": {
+            "application/json;charset=utf-8": {
+              "schema": {
+                "$ref": "#/components/schemas/TriggerDisbursementRequest"
+              },
+              "example": {
+                "metadata": {
+                  "version": "1.0",
+                  "timestamp": "2018-12-06T11:39:57.153Z",
+                  "traceId": "e8cc6822bd4bbb4eb1b9e1b4996fbff8acb",
+                  "orgId": "LSP007"
+                },
+                "loanId": "e8cc6822bd4bbb4eb1b9e1b4996fbff8acb",
+                "requestId": "e8cc6822bd4bbb4eb1b9e1b4996fbff8acb",
+                "payment": {
+                  "id": "e8cc6822bd4bbb4eb1b9e1b4996fbff8acb"
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json;charset=utf-8": {
+                "schema": {
+                  "$ref": "#/components/schemas/Ack"
+                },
+                "example": {
+                  "ack": {
+                    "error": "0",
+                    "traceId": "h8cc6822bd4bbb4eb1b9e1b4996fbff8acb",
+                    "timestamp": "2018-12-06T11:39:57.153Z"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid `body`"
+          }
+        }
+      }
+    },
+    "/v3.3/disbursement/triggerDisbursementResponse": {
+      "post": {
+        "tags": [
+          "Disbursement APIs"
+        ],
+        "summary": "trigger Disbursement Response",
+        "requestBody": {
+          "content": {
+            "application/json;charset=utf-8": {
+              "schema": {
+                "$ref": "#/components/schemas/TriggerDisbursementResponse"
+              },
+              "example": {
+                "metadata": {
+                  "version": "1.0",
+                  "timestamp": "2018-12-06T11:39:57.153Z",
+                  "traceId": "e8cc6822bd4bbb4eb1b9e1b4996fbff8acb",
+                  "orgId": "LSP007"
+                },
+                "response": {
+                  "error": "0"
+                },
+                "requestId": "e8cc6822bd4bbb4eb1b9e1b4996fbff8acb",
+                "payment": {
+                  "id": "e8cc6822bd4bbb4eb1b9e1b4996fbff8acb",
+                  "date": "2018-12-06T11:39:57.153Z",
+                  "totalAmount": "5000.00",
+                  "installmentNumber": "1",
+                  "status": "PROCESSING"
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json;charset=utf-8": {
+                "schema": {
+                  "$ref": "#/components/schemas/Ack"
+                },
+                "example": {
+                  "ack": {
+                    "error": "0",
+                    "traceId": "h8cc6822bd4bbb4eb1b9e1b4996fbff8acb",
+                    "timestamp": "2018-12-06T11:39:57.153Z"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid `body`"
+          }
+        }
+      }
+    },
+    "/v3.3/disbursement/triggerDisbursementStatusRequest": {
+      "post": {
+        "tags": [
+          "Disbursement APIs"
+        ],
+        "summary": "Trigger Disbursement Status Request",
+        "requestBody": {
+          "content": {
+            "application/json;charset=utf-8": {
+              "schema": {
+                "$ref": "#/components/schemas/TriggerDisbursementStatusRequest"
+              },
+              "example": {
+                "metadata": {
+                  "version": "1.0",
+                  "timestamp": "2018-12-06T11:39:57.153Z",
+                  "traceId": "e8cc6822bd4bbb4eb1b9e1b4996fbff8acb",
+                  "orgId": "LSP007"
+                },
+                "loanId": "e8cc6822bd4bbb4eb1b9e1b4996fbff8acb",
+                "requestId": "e8cc6822bd4bbb4eb1b9e1b4996fbff8acb",
+                "payment": {
+                  "id": "e8cc6822bd4bbb4eb1b9e1b4996fbff8acb"
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json;charset=utf-8": {
+                "schema": {
+                  "$ref": "#/components/schemas/Ack"
+                },
+                "example": {
+                  "ack": {
+                    "error": "0",
+                    "traceId": "h8cc6822bd4bbb4eb1b9e1b4996fbff8acb",
+                    "timestamp": "2018-12-06T11:39:57.153Z"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid `body`"
+          }
+        }
+      }
+    },
+    "/v3.3/disbursement/triggerDisbursementStatusResponse": {
+      "post": {
+        "tags": [
+          "Disbursement APIs"
+        ],
+        "summary": "Trigger Disbursement Status Response",
+        "requestBody": {
+          "content": {
+            "application/json;charset=utf-8": {
+              "schema": {
+                "$ref": "#/components/schemas/TriggerDisbursementStatusResponse"
+              },
+              "example": {
+                "metadata": {
+                  "version": "1.0",
+                  "timestamp": "2018-12-06T11:39:57.153Z",
+                  "traceId": "e8cc6822bd4bbb4eb1b9e1b4996fasasade",
+                  "orgId": "LSP007"
+                },
+                "response": {
+                  "error": "0"
+                },
+                "requestId": "e8cc6822bd4bbb4eb1b9e1b4996fbff8acb",
+                "payment": {
+                  "id": "e8cc6822bd4bbb4eb1b9e1b4996fbff8acb",
+                  "date": "2018-12-06T11:39:57.153Z",
+                  "totalAmount": "5000.00",
+                  "installmentNumber": "1",
+                  "status": "SUCCESS",
+                  "txnRefNo": "004618602124"
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json;charset=utf-8": {
+                "schema": {
+                  "$ref": "#/components/schemas/Ack"
+                },
+                "example": {
+                  "ack": {
+                    "error": "0",
+                    "traceId": "h8cc6822bd4bbb4eb1b9e1b4996fbff8acb",
+                    "timestamp": "2018-12-06T11:39:57.153Z"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid `body`"
+          }
+        }
+      }
+    },
+    "/v3.3/loan/dispute/raiseDisputeRequest": {
+      "post": {
+        "tags": [
+          "Loan Dispute Management APIs"
+        ],
+        "summary": "RaiseDisputeRequest",
+        "requestBody": {
+          "content": {
+            "application/json;charset=utf-8": {
+              "schema": {
+                "$ref": "#/components/schemas/RaiseDisputeRequest"
+              },
+              "example": {
+                "metadata": {
+                  "version": "1.0",
+                  "timestamp": "2018-12-06T11:39:57.153Z",
+                  "traceId": "e8cc6822bd4bbb4eb1b9e1b4996fbff8acb",
+                  "orgId": "LSP007"
+                },
+                "loanId": "e8cc6822bd4bbb4eb1b9e1b4996fbff8acb",
+                "requestId": "e8cc6822bd4bbb4eb1b9e1b4996fbff8acb",
+                "dispute": {
+                  "description": "Amount not disbursed to the account yet"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json;charset=utf-8": {
+                "schema": {
+                  "$ref": "#/components/schemas/Ack"
+                },
+                "example": {
+                  "ack": {
+                    "error": "0",
+                    "traceId": "h8cc6822bd4bbb4eb1b9e1b4996fbff8acb",
+                    "timestamp": "2018-12-06T11:39:57.153Z"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid `body`"
+          }
+        }
+      }
+    },
+    "/v3.3/loan/dispute/raiseDisputeResponse": {
+      "post": {
+        "tags": [
+          "Loan Dispute Management APIs"
+        ],
+        "summary": "Raise Dispute Response",
+        "requestBody": {
+          "content": {
+            "application/json;charset=utf-8": {
+              "schema": {
+                "$ref": "#/components/schemas/RaiseDisputeResponse"
+              },
+              "example": {
+                "metadata": {
+                  "version": "1.0",
+                  "timestamp": "2018-12-06T11:39:57.153Z",
+                  "traceId": "e8cc6822bd4bbb4eb1b9e1b4996fbff8acb",
+                  "orgId": "LSP007"
+                },
+                "response": {
+                  "error": "0"
+                },
+                "requestId": "e8cc6822bd4bbb4eb1b9e1b4996fbff8acb",
+                "dispute": {
+                  "id": "e8cc6822bd4bbb4eb1b9e1b4996fbff8acb",
+                  "status": "NEED_MORE_INFO",
+                  "url": "URL where dispute progress can be tracked"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json;charset=utf-8": {
+                "schema": {
+                  "$ref": "#/components/schemas/Ack"
+                },
+                "example": {
+                  "ack": {
+                    "error": "0",
+                    "traceId": "e8cc6822bd4bbb4eb1b9e1b4996fbff8acb",
+                    "timestamp": "2018-12-06T11:39:57.153Z"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid `body`"
+          }
+        }
+      }
+    },
+    "/v3.3/loan/dispute/disputeStatusRequest": {
+      "post": {
+        "tags": [
+          "Loan Dispute Management APIs"
+        ],
+        "summary": "Dispute Status Request",
+        "requestBody": {
+          "content": {
+            "application/json;charset=utf-8": {
+              "schema": {
+                "$ref": "#/components/schemas/DisputeStatusRequest"
+              },
+              "example": {
+                "metadata": {
+                  "version": "1.0",
+                  "timestamp": "2018-12-06T11:39:57.153Z",
+                  "traceId": "e8cc6822bd4bbb4eb1b9e1b4996fbff8acb",
+                  "orgId": "LSP007"
+                },
+                "requestId": "e8cc6822bd4bbb4eb1b9e1b4996fbff8acb",
+                "dispute": {
+                  "id": "e8cc6822bd4bbb4eb1b9e1b4996fbff8acb"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json;charset=utf-8": {
+                "schema": {
+                  "$ref": "#/components/schemas/Ack"
+                },
+                "example": {
+                  "ack": {
+                    "error": "0",
+                    "traceId": "e8cc6822bd4bbb4eb1b9e1b4996fbff8acb",
+                    "timestamp": "2018-12-06T11:39:57.153Z"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid `body`"
+          }
+        }
+      }
+    },
+    "/v3.3/loan/dispute/disputeStatusResponse": {
+      "post": {
+        "tags": [
+          "Loan Dispute Management APIs"
+        ],
+        "summary": "Dispute Status Response / Webhook",
+        "requestBody": {
+          "content": {
+            "application/json;charset=utf-8": {
+              "schema": {
+                "$ref": "#/components/schemas/DisputeStatusResponse"
+              },
+              "example": {
+                "metadata": {
+                  "version": "1.0",
+                  "timestamp": "2018-12-06T11:39:57.153Z",
+                  "traceId": "e8cc6822bd4bbb4eb1b9e1b4996fbff8acb",
+                  "orgId": "LSP007"
+                },
+                "response": {
+                  "error": "0"
+                },
+                "requestId": "e8cc6822bd4bbb4eb1b9e1b4996fbff8acb",
+                "dispute": {
+                  "id": "e8cc6822bd4bbb4eb1b9e1b4996fbff8acb",
+                  "status": "CLOSED"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json;charset=utf-8": {
+                "schema": {
+                  "$ref": "#/components/schemas/Ack"
+                },
+                "example": {
+                  "ack": {
+                    "error": "0",
+                    "traceId": "e8cc6822bd4bbb4eb1b9e1b4996fbff8acb",
+                    "timestamp": "2018-12-06T11:39:57.153Z"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid `body`"
+          }
+        }
+      }
+    },
+    "/v3.3/disbursement/getDisbursementPlansRequest": {
+      "post": {
+        "tags": [
+          "Disbursement APIs"
+        ],
+        "summary": "Get Disbursement Plans Request",
+        "requestBody": {
+          "content": {
+            "application/json;charset=utf-8": {
+              "schema": {
+                "$ref": "#/components/schemas/GetDisbursementPlansRequest"
+              },
+              "example": {
+                "metadata": {
+                  "version": "1.0",
+                  "timestamp": "2018-12-06T11:39:57.153Z",
+                  "traceId": "e8cc6822bd4bbb4eb1b9e1b4996fbff8acb",
+                  "orgId": "LSP007"
+                },
+                "requestId": "e8cc6822bd4bbb4eb1b9e1b4996fbff8acb",
+                "loanId": "e8cc6822bd4bbb4eb1b9e1b4996fbff8acb"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json;charset=utf-8": {
+                "schema": {
+                  "$ref": "#/components/schemas/Ack"
+                },
+                "example": {
+                  "ack": {
+                    "error": "0",
+                    "traceId": "h8cc6822bd4bbb4eb1b9e1b4996fbff8acb",
+                    "timestamp": "2018-12-06T11:39:57.153Z"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid `body`"
+          }
+        }
+      }
+    },
+    "/v3.3/disbursement/getDisbursementPlansResponse": {
+      "post": {
+        "tags": [
+          "Disbursement APIs"
+        ],
+        "summary": "Get Disbursement Plans Response",
+        "requestBody": {
+          "content": {
+            "application/json;charset=utf-8": {
+              "schema": {
+                "$ref": "#/components/schemas/GetDisbursementPlansResponse"
+              },
+              "example": {
+                "metadata": {
+                  "version": "1.0",
+                  "timestamp": "2018-12-06T11:39:57.153Z",
+                  "traceId": "e8cc6822bd4bbb4eb1b9e1b4996fbff8acb",
+                  "orgId": "LSP007"
+                },
+                "response": {
+                  "error": "0"
+                },
+                "requestId": "e8cc6822bd4bbb4eb1b9e1b4996fbff8acb",
+                "plans": [
+                  {
+                    "id": "a8cc6822bd4bbb4eb1b9e1b4996fbff8acb",
+                    "automatic": "false",
+                    "scheduleType": "ONE_TIME",
+                    "noOfInstallments": "1",
+                    "tenure": {},
+                    "totalAmount": "10000.00"
+                  },
+                  {
+                    "id": "hb8c6822bd4bbb4eb1b9e1b4996fbff8acb",
+                    "automatic": "false",
+                    "scheduleType": "ONE_TIME",
+                    "noOfInstallments": "1",
+                    "tenure": {},
+                    "totalAmount": "10000.00"
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json;charset=utf-8": {
+                "schema": {
+                  "$ref": "#/components/schemas/Ack"
+                },
+                "example": {
+                  "ack": {
+                    "error": "0",
+                    "traceId": "h8cc6822bd4bbb4eb1b9e1b4996fbff8acb",
+                    "timestamp": "2018-12-06T11:39:57.153Z"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid `body`"
+          }
+        }
+      }
+    },
+    "/v3.3/disbursement/getDisbursementAccountsRequest": {
+      "post": {
+        "tags": [
+          "Disbursement APIs"
+        ],
+        "summary": "Get Disbursement Accounts Request",
+        "requestBody": {
+          "content": {
+            "application/json;charset=utf-8": {
+              "schema": {
+                "$ref": "#/components/schemas/GetDisbursementAccountsRequest"
+              },
+              "example": {
+                "metadata": {
+                  "version": "1.0",
+                  "timestamp": "2018-12-06T11:39:57.153Z",
+                  "traceId": "e8cc6822bd4bbb4eb1b9e1b4996fbff8acb",
+                  "orgId": "LSP007"
+                },
+                "loanId": "e8cc6822bd4bbb4eb1b9e1b4996fbff8acb",
+                "requestId": "e8cc6822bd4bbb4eb1b9e1b4996fbff8acb"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json;charset=utf-8": {
+                "schema": {
+                  "$ref": "#/components/schemas/Ack"
+                },
+                "example": {
+                  "ack": {
+                    "error": "0",
+                    "traceId": "e8cc6822bd4bbb4eb1b9e1b4996fbff8acb",
+                    "timestamp": "2018-12-06T11:39:57.153Z"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid `body`"
+          }
+        }
+      }
+    },
+    "/v3.3/disbursement/getDisbursementAccountsResponse": {
+      "post": {
+        "tags": [
+          "Disbursement APIs"
+        ],
+        "summary": "Get Disbursement Accounts Response",
+        "requestBody": {
+          "content": {
+            "application/json;charset=utf-8": {
+              "schema": {
+                "$ref": "#/components/schemas/GetDisbursementAccountsResponse"
+              },
+              "example": {
+                "metadata": {
+                  "version": "1.0",
+                  "timestamp": "2018-12-06T11:39:57.153Z",
+                  "traceId": "e8cc6822bd4bbb4eb1b9e1b4996fbff8acb",
+                  "orgId": "LSP007"
+                },
+                "response": {
+                  "error": "0"
+                },
+                "accountList": [
+                  {
+                    "id": "hb8c6822bd4bbb4eb1b9e1b4996fbff8acb",
+                    "accountDataType": "ACCOUNT",
+                    "data": {
+                      "accountType": "CURRENT",
+                      "maskedAccountNumber": "XXXXXXXXX9090"
+                    }
+                  }
+                ],
+                "requestId": "e8cc6822bd4bbb4eb1b9e1b4996fbff8acb"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json;charset=utf-8": {
+                "schema": {
+                  "$ref": "#/components/schemas/Ack"
+                },
+                "example": {
+                  "ack": {
+                    "error": "0",
+                    "traceId": "e8cc6822bd4bbb4eb1b9e1b4996fbff8acb",
+                    "timestamp": "2018-12-06T11:39:57.153Z"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid `body`"
+          }
+        }
+      }
+    },
+    "/v3.3/loan/grantLoanRequest": {
+      "post": {
+        "tags": [
+          "Grant Loan APIs"
+        ],
+        "summary": "Grant Loan Request",
+        "requestBody": {
+          "content": {
+            "application/json;charset=utf-8": {
+              "schema": {
+                "$ref": "#/components/schemas/GrantLoanRequest"
+              },
+              "example": {
+                "metadata": {
+                  "version": "1.0",
+                  "timestamp": "2018-12-06T11:39:57.153Z",
+                  "traceId": "e8cc6822bd4bbb4eb1b9e1b4996fbff8acb",
+                  "orgId": "LSP007"
+                },
+                "requestId": "e8cc6822bd4bbb4eb1b9e1b4996fbff8acb",
+                "loanApplicationId": "e8cc6822bd4bbb4eb1b9e1b4996fbff8acb"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json;charset=utf-8": {
+                "schema": {
+                  "$ref": "#/components/schemas/Ack"
+                },
+                "example": {
+                  "ack": {
+                    "error": "0",
+                    "traceId": "e8cc6822bd4bbb4eb1b9e1b4996fbff8acb",
+                    "timestamp": "2018-12-06T11:39:57.153Z"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid `body`"
+          }
+        }
+      }
+    },
+    "/v3.3/loan/grantLoanResponse": {
+      "post": {
+        "tags": [
+          "Grant Loan APIs"
+        ],
+        "summary": "Grant Loan Response",
+        "requestBody": {
+          "content": {
+            "application/json;charset=utf-8": {
+              "schema": {
+                "$ref": "#/components/schemas/GrantLoanResponse"
+              },
+              "example": {
+                "metadate": {
+                  "version": "1.0",
+                  "timestamp": "2018-12-06T11:39:57.153Z",
+                  "traceId": "e8cc6822bd4bbb4eb1b9e1b4996fbff8acb",
+                  "orgId": "LSP007"
+                },
+                "response": {
+                  "error": "0"
+                },
+                "requestId": "e8cc6822bd4bbb4eb1b9e1b4996fbff8acb",
+                "loanId": "e8cc6822bd4bbb4eb1b9e1b4996fbff8acb",
+                "loanStatus": "GRANTED",
+                "terms": {
+                  "requestedAmount": "50000.00",
+                  "currency": "INR",
+                  "sanctionedAmount": "50000.00",
+                  "interestType": "FIXED",
+                  "interestRate": "12",
+                  "interestAmount": "6000.00",
+                  "totalAmount": "56000.00",
+                  "tenure": {
+                    "duration": "3",
+                    "unit": "MONTH"
+                  },
+                  "legalAgreement": {
+                    "type": "TEXT",
+                    "data": "<Base64 Encoded Data>"
+                  },
+                  "documents": [],
+                  "charges": {
+                    "prepayment": {
+                      "chargeType": "RATE_BASED",
+                      "data": {
+                        "rate": "6",
+                        "description": "Description of charge calculation",
+                        "applicableParameter": "TOTAL_LOAN_AMOUNT"
+                      }
+                    },
+                    "bounce": {
+                      "chargeType": "FIXED_AMOUNT",
+                      "data": {
+                        "amount": "3000.00",
+                        "description": "Description of charge calculation"
+                      }
+                    },
+                    "latePayment": {
+                      "chargeType": "FIXED_AMOUNT",
+                      "data": {
+                        "amount": "3000.00",
+                        "description": "Description of charge calculation"
+                      }
+                    },
+                    "processing": {
+                      "chargeType": "FIXED_AMOUNT",
+                      "data": {
+                        "amount": "3000.00",
+                        "description": "Description of charge calculation"
+                      }
+                    }
+                  }
+                },
+                "disbursement": {
+                  "plan": {
+                    "id": "hb8c6822bd4bbb4eb1b9e1b4996fbff8acb",
+                    "automatic": false,
+                    "scheduleType": "ONE_TIME",
+                    "noOfInstallments": "1",
+                    "totalAmount": "10000.00",
+                    "status": "ACTIVE"
+                  },
+                  "accountDetails": {
+                    "accountDataType": "ACCOUNT",
+                    "data": {
+                      "accountType": "CURRENT",
+                      "maskedAccountNumber": "XXXXXXXXX9090"
+                    }
+                  }
+                },
+                "repayment": {
+                  "plan": {
+                    "id": "a8cc6822bd4bbb4eb1b9e1b4996fbff8acb",
+                    "automatic": false,
+                    "scheduleType": "ONE_TIME",
+                    "payNowAllowed": false,
+                    "changeMethodAllowed": false,
+                    "noOfInstallments": "1",
+                    "principal": "9000.00",
+                    "interestAmount": "1000.00",
+                    "penalty": "0.00",
+                    "totalAmount": "10000.00",
+                    "status": "ACTIVE"
+                  },
+                  "method": {
+                    "id": "e8cc6822bd4bbb4eb1b9e1b4996fbff8acb",
+                    "status": "ACTIVE"
+                  }
+                },
+                "actionRequired": [],
+                "rejectionDetails": []
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json;charset=utf-8": {
+                "schema": {
+                  "$ref": "#/components/schemas/Ack"
+                },
+                "example": {
+                  "ack": {
+                    "error": "0",
+                    "traceId": "e8cc6822bd4bbb4eb1b9e1b4996fbff8acb",
+                    "timestamp": "2018-12-06T11:39:57.153Z"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid `body`"
+          }
+        }
+      }
+    },
+    "/v3.3/loan/loanSummaryRequest": {
+      "post": {
+        "tags": [
+          "Grant Loan APIs"
+        ],
+        "summary": "Loan Summary Request",
+        "requestBody": {
+          "content": {
+            "application/json;charset=utf-8": {
+              "schema": {
+                "$ref": "#/components/schemas/LoanSummaryRequest"
+              },
+              "example": {
+                "metadata": {
+                  "version": "1.0",
+                  "timestamp": "2018-12-06T11:39:57.153Z",
+                  "traceId": "e8cc6822bd4bbb4eb1b9e1b4996fbff8acb",
+                  "orgId": "LSP007"
+                },
+                "requestId": "e8cc6822bd4bbb4eb1b9e1b4996fbff8acb",
+                "loanId": "e8cc6822bd4bbb4eb1b9e1b4996fbff8acb"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json;charset=utf-8": {
+                "schema": {
+                  "$ref": "#/components/schemas/Ack"
+                },
+                "example": {
+                  "ack": {
+                    "error": "0",
+                    "traceId": "e8cc6822bd4bbb4eb1b9e1b4996fbff8acb",
+                    "timestamp": "2018-12-06T11:39:57.153Z"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid `body`"
+          }
+        }
+      }
+    },
+    "/v3.3/loan/loanSummaryResponse": {
+      "post": {
+        "tags": [
+          "Grant Loan APIs"
+        ],
+        "summary": "Loan Summary Response",
+        "requestBody": {
+          "content": {
+            "application/json;charset=utf-8": {
+              "schema": {
+                "$ref": "#/components/schemas/LoanSummaryResponse"
+              },
+              "example": {
+                "metadata": {
+                  "version": "1.0",
+                  "timestamp": "2018-12-06T11:39:57.153Z",
+                  "traceId": "e8cc6822bd4bbb4eb1b9e1b4996fbff8acb",
+                  "orgId": "LSP007"
+                },
+                "response": {
+                  "error": "0"
+                },
+                "requestId": "e8cc6822bd4bbb4eb1b9e1b4996fbff8acb",
+                "loanId": "e8cc6822bd4bbb4eb1b9e1b4996fbff8acb",
+                "loanStatus": "GRANTED",
+                "createdDate": "2019-12-30T13:55:00Z",
+                "startDate": "2019-12-30T00:00:00Z",
+                "endDate": "2020-03-01T00:00:00Z",
+                "summary": {
+                  "nextRepayment": {
+                    "id": "ws4c6822bd4bbb4eb1b9e1b4996fbff8wed",
+                    "status": "SUCCESS",
+                    "totalAmount": "5000.00",
+                    "principal": "4000.00",
+                    "interestAmount": "1000.00",
+                    "penalty": "0.00",
+                    "fee": "0.00",
+                    "date": "2020-03-01T00:00:00Z",
+                    "installmentNumber": "1"
+                  },
+                  "currentRepayment": {
+                    "id": "ws4c6822bd4bbb4eb1b9e1b4996fbff8wed",
+                    "status": "SUCCESS",
+                    "totalAmount": "5000.00",
+                    "principal": "4000.00",
+                    "interestAmount": "1000.00",
+                    "penalty": "0.00",
+                    "fee": "0.00",
+                    "date": "2020-10-10",
+                    "installmentNumber": "1"
+                  },
+                  "principalPaid": "10000.00",
+                  "interestPaid": "100.00",
+                  "penaltyPaid": "10.00",
+                  "principalPending": "10000.00",
+                  "interestPending": "100.00",
+                  "amountDisbursed": "1000.00",
+                  "amountRepaid": "1000.00",
+                  "tenure": {
+                    "duration": "3",
+                    "unit": "MONTH"
+                  },
+                  "description": "short description for the loan"
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json;charset=utf-8": {
+                "schema": {
+                  "$ref": "#/components/schemas/Ack"
+                },
+                "example": {
+                  "ack": {
+                    "error": "0",
+                    "traceId": "e8cc6822bd4bbb4eb1b9e1b4996fbff8acb",
+                    "timestamp": "2018-12-06T11:39:57.153Z"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid `body`"
+          }
+        }
+      }
+    },
+    "/v3.3/loan/getLoanRequest": {
+      "post": {
+        "tags": [
+          "Grant Loan APIs"
+        ],
+        "summary": "Get Loan Request",
+        "requestBody": {
+          "content": {
+            "application/json;charset=utf-8": {
+              "schema": {
+                "$ref": "#/components/schemas/GetLoanRequest"
+              },
+              "example": {
+                "metadata": {
+                  "version": "1.0",
+                  "timestamp": "2018-12-06T11:39:57.153Z",
+                  "traceId": "e8cc6822bd4bbb4eb1b9e1b4996fbff8acb",
+                  "orgId": "LSP007"
+                },
+                "requestId": "e8cc6822bd4bbb4eb1b9e1b4996fbff8acb",
+                "loanId": "e8cc6822bd4bbb4eb1b9e1b4996fbff8acb"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json;charset=utf-8": {
+                "schema": {
+                  "$ref": "#/components/schemas/Ack"
+                },
+                "example": {
+                  "ack": {
+                    "error": "0",
+                    "traceId": "e8cc6822bd4bbb4eb1b9e1b4996fbff8acb",
+                    "timestamp": "2018-12-06T11:39:57.153Z"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid `body`"
+          }
+        }
+      }
+    },
+    "/v3.3/loan/getLoanResponse": {
+      "post": {
+        "tags": [
+          "Grant Loan APIs"
+        ],
+        "summary": "Get Loan Response",
+        "requestBody": {
+          "content": {
+            "application/json;charset=utf-8": {
+              "schema": {
+                "$ref": "#/components/schemas/GetLoanResponse"
+              },
+              "example": {
+                "metadata": {
+                  "version": "1.0",
+                  "timestamp": "2018-12-06T11:39:57.153Z",
+                  "traceId": "e8cc6822bd4bbb4eb1b9e1b4996fbff8acb",
+                  "orgId": "LSP007"
+                },
+                "requestId": "e8cc6822bd4bbb4eb1b9e1b4996fbff8acb",
+                "response": {
+                  "error": "0"
+                },
+                "loanId": "e8cc6822bd4bbb4eb1b9e1b4996fbff8acb",
+                "loanStatus": "GRANTED",
+                "createdDate": "2019-12-30T13:55:00Z",
+                "startDate": "2019-12-30T00:00:00Z",
+                "endDate": "2020-03-01T00:00:00Z",
+                "type": "CASHFLOW",
+                "borrower": {
+                  "primaryId": "CPAA1234A",
+                  "primaryIdType": "PAN",
+                  "additionalIdentifiers": [
+                    {
+                      "key": "12345",
+                      "value": "AADHAAR"
+                    }
+                  ],
+                  "platformData": [],
+                  "name": "John doe",
+                  "category": "ORGANIZATION",
+                  "contactDetails": [
+                    {
+                      "type": "PRIMARY",
+                      "phone": "7777777777",
+                      "email": "johndoe@defenterprises",
+                      "address": {
+                        "co": "<care of>",
+                        "hba": "<House/Building/Apartment>",
+                        "srl": "<Street/Road/Lane>",
+                        "landmark": "",
+                        "als": "<Area/Locality/Sector>",
+                        "vtc": "<Village/Town/City>",
+                        "pincode": "",
+                        "po": "543442",
+                        "district": "",
+                        "state": "State",
+                        "country": "Country",
+                        "url": "<digital address>",
+                        "latitude": "",
+                        "longitude": ""
+                      }
+                    }
+                  ],
+                  "documents": [
+                    {
+                      "source": "GSTN",
+                      "sourceIdentifier": "GSTN",
+                      "format": "JSON",
+                      "reference": "e8cc6822bd4bbb4eb1b9e1b4996fbff8acb",
+                      "type": "GST_PROFILE",
+                      "isDataInline": "true",
+                      "data": "Base64 encoded string"
+                    }
+                  ]
+                },
+                "collaterals": [
+                  {
+                    "collateralPrimaryId": "<GSTIN>_<INVOICENUM>",
+                    "collateralPrimaryIdType": "GST_INVOICE",
+                    "type": "GST_INVOICE",
+                    "additionalIdentifiers": [
+                      {
+                        "key": "123456",
+                        "value": "AADHAAR"
+                      }
+                    ],
+                    "valuation": {
+                      "value": "",
+                      "currency": "",
+                      "date": "",
+                      "source": "GSTN"
+                    },
+                    "parties": [
+                      {
+                        "primaryIdType": "PAN",
+                        "category": "ORGANIZATION",
+                        "additionalIdentifiers": [
+                          {
+                            "key": "12345",
+                            "value": "AADHAAR"
+                          }
+                        ],
+                        "contactDetails": [
+                          {
+                            "type": "PRIMARY",
+                            "phone": "9000000000",
+                            "address": []
+                          }
+                        ],
+                        "documents": [
+                          {
+                            "source": "GSTN",
+                            "sourceIdentifier": "GSTN",
+                            "format": "JSON",
+                            "reference": "e8cc6822bd4bbb4eb1b9e1b4996fbff8acb",
+                            "type": "GSTN_PROFILE",
+                            "isDataInline": "true",
+                            "data": "Base64 encoded string"
+                          }
+                        ]
+                      }
+                    ],
+                    "documents": [
+                      {
+                        "source": "GSTN",
+                        "sourceIdentifier": "GSTN",
+                        "format": "JSON",
+                        "reference": "e8cc6822bd4bbb4eb1b9e1b4996fbff8acb",
+                        "type": "GSTN_PROFILE",
+                        "isDataInline": "true",
+                        "data": "Base64 encoded string"
+                      }
+                    ]
+                  }
+                ],
+                "guarantors": [
+                  {
+                    "primaryIdType": "PAN",
+                    "primaryId": "e8cc6822bd4bbb4eb1b9e1b4996fbff8acb",
+                    "category": "ORGANIZATION",
+                    "contactDetails": [
+                      {
+                        "type": "PRIMARY",
+                        "phone": "9000000000",
+                        "address": []
+                      }
+                    ],
+                    "additionalIdentifiers": [
+                      {
+                        "key": "12345",
+                        "value": "AADHAAR"
+                      }
+                    ],
+                    "documents": [
+                      {
+                        "source": "GSTN",
+                        "sourceIdentifier": "GSTN",
+                        "format": "JSON",
+                        "reference": "e8cc6822bd4bbb4eb1b9e1b4996fbff8acb",
+                        "type": "GSTN_PROFILE",
+                        "isDataInline": "true",
+                        "data": "Base64 encoded string"
+                      }
+                    ]
+                  }
+                ],
+                "applicants": [
+                  {
+                    "primaryId": "9898989898",
+                    "primaryIdType": "MOBILE",
+                    "contactDetails": [
+                      {
+                        "type": "PRIMARY",
+                        "phone": "9000000000",
+                        "address": []
+                      }
+                    ],
+                    "additionalIdentifiers": [
+                      {
+                        "key": "12345",
+                        "value": "AADHAAR"
+                      }
+                    ],
+                    "documents": [
+                      {
+                        "source": "GSTN",
+                        "sourceIdentifier": "GSTN",
+                        "format": "JSON",
+                        "reference": "e8cc6822bd4bbb4eb1b9e1b4996fbff8acb",
+                        "type": "GSTN_PROFILE",
+                        "isDataInline": "true",
+                        "data": "Base64 encoded string"
+                      }
+                    ]
+                  }
+                ],
+                "terms": {
+                  "requestedAmount": "50000.00",
+                  "currency": "INR",
+                  "sanctionedAmount": "50000.00",
+                  "interestType": "FIXED",
+                  "interestRate": "12.00",
+                  "interestAmount": "6000.00",
+                  "totalAmount": "56000.00",
+                  "tenure": {
+                    "duration": "3",
+                    "unit": "MONTH"
+                  },
+                  "legalAgreement": {
+                    "type": "TEXT",
+                    "data": "<Base64 Encoded Data>"
+                  },
+                  "charges": {
+                    "prepayment": {
+                      "chargeType": "RATE_BASED",
+                      "data": {
+                        "rate": "6",
+                        "applicableParameter": "TOTAL_LOAN_AMOUNT",
+                        "description": "Description of charge calculation"
+                      }
+                    },
+                    "bounce": {
+                      "chargeType": "FIXED_AMOUNT",
+                      "data": {
+                        "amount": "3000.00",
+                        "description": "Description of charge calculation",
+                        "rate": "6",
+                        "applicableParameter": "TOTAL_LOAN_AMOUNT"
+                      }
+                    },
+                    "latePayment": {
+                      "chargeType": "FIXED_AMOUNT",
+                      "data": {
+                        "amount": "3000.00",
+                        "description": "Description of charge calculation",
+                        "rate": "6",
+                        "applicableParameter": "TOTAL_LOAN_AMOUNT"
+                      }
+                    },
+                    "processing": {
+                      "chargeType": "FIXED_AMOUNT",
+                      "data": {
+                        "amount": "3000.00",
+                        "rate": "6",
+                        "applicableParameter": "TOTAL_LOAN_AMOUNT",
+                        "description": "Description of charge calculation"
+                      }
+                    }
+                  }
+                },
+                "disbursement": {
+                  "plan": {
+                    "id": "hb8c6822bd4bbb4eb1b9e1b4996fbff8acb",
+                    "automatic": false,
+                    "scheduleType": "ONE_TIME",
+                    "noOfInstallments": "1",
+                    "tenure": {
+                      "duratin": "1",
+                      "unit": "MONTH"
+                    },
+                    "totalAmount": "10000.00",
+                    "status": "ACTIVE"
+                  },
+                  "accountDetails": {
+                    "accountDataType": "ACCOUNT",
+                    "data": {
+                      "accountType": "CURRENT",
+                      "maskedAccountNumber": "XXXXXXXXX9090"
+                    }
+                  }
+                },
+                "repayment": {
+                  "plan": {
+                    "id": "hb8c6822bd4bbb4eb1b9e1b4996fbff8acb",
+                    "automatic": false,
+                    "payNowAllowed": "false",
+                    "editPlanAllowed": "false",
+                    "changeMethodAllowed": "false",
+                    "scheduleType": "ONE_TIME",
+                    "noOfInstallments": "1",
+                    "tenure": {
+                      "duratin": "1",
+                      "unit": "MONTH"
+                    },
+                    "totalAmount": "10000.00",
+                    "status": "ACTIVE",
+                    "principal": "9000.00",
+                    "interestAmount": "1000.00"
+                  },
+                  "method": {
+                    "id": "e8cc6822bd4bbb4eb1b9e1b4996fbff8acb",
+                    "type": "EMANDATE_UPI",
+                    "status": "ACTIVE",
+                    "isActive": "true"
+                  }
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json;charset=utf-8": {
+                "schema": {
+                  "$ref": "#/components/schemas/Ack"
+                },
+                "example": {
+                  "ack": {
+                    "error": "0",
+                    "traceId": "e8cc6822bd4bbb4eb1b9e1b4996fbff8acb",
+                    "timestamp": "2018-12-06T11:39:57.153Z"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid `body`"
+          }
+        }
+      }
+    },
+    "/v3.3/loan/loanStatementRequest": {
+      "post": {
+        "tags": [
+          "Grant Loan APIs"
+        ],
+        "summary": "Loan Statement Request",
+        "requestBody": {
+          "content": {
+            "application/json;charset=utf-8": {
+              "schema": {
+                "$ref": "#/components/schemas/LoanStatementRequest"
+              },
+              "example": {
+                "metadata": {
+                  "version": "1.0",
+                  "timestamp": "2018-12-06T11:39:57.153Z",
+                  "traceId": "e8cc6822bd4bbb4eb1b9e1b4996fbff8acb",
+                  "orgId": "LSP007"
+                },
+                "requestId": "e8cc6822bd4bbb4eb1b9e1b4996fbff8acb",
+                "loanId": "e8cc6822bd4bbb4eb1b9e1b4996fbff8acb"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json;charset=utf-8": {
+                "schema": {
+                  "$ref": "#/components/schemas/Ack"
+                },
+                "example": {
+                  "ack": {
+                    "error": "0",
+                    "traceId": "e8cc6822bd4bbb4eb1b9e1b4996fbff8acb",
+                    "timestamp": "2018-12-06T11:39:57.153Z"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid `body`"
+          }
+        }
+      }
+    },
+    "/v3.3/loan/loanStatementResponse": {
+      "post": {
+        "tags": [
+          "Grant Loan APIs"
+        ],
+        "summary": "Loan Statement Response",
+        "requestBody": {
+          "content": {
+            "application/json;charset=utf-8": {
+              "schema": {
+                "$ref": "#/components/schemas/LoanStatementResponse"
+              },
+              "example": {
+                "metadata": {
+                  "version": "1.0",
+                  "timestamp": "2018-12-06T11:39:57.153Z",
+                  "traceId": "e8cc6822bd4bbb4eb1b9e1b4996fbff8acb",
+                  "orgId": "LSP007"
+                },
+                "requestId": "e8cc6822bd4bbb4eb1b9e1b4996fbff8acb",
+                "response": {
+                  "error": "0"
+                },
+                "loanId": "e8cc6822bd4bbb4eb1b9e1b4996fbff8acb",
+                "accountStatement": {
+                  "date": "2020-03-01T00:00:00Z",
+                  "narration": "Repayment of Loan no : xxxxxxx9090",
+                  "txnRefNo": "004618602124",
+                  "amount": "50000.00",
+                  "type": "DEPOSIT",
+                  "closingBalance": "50000.00"
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json;charset=utf-8": {
+                "schema": {
+                  "$ref": "#/components/schemas/Ack"
+                },
+                "example": {
+                  "ack": {
+                    "error": "0",
+                    "traceId": "e8cc6822bd4bbb4eb1b9e1b4996fbff8acb",
+                    "timestamp": "2018-12-06T11:39:57.153Z"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid `body`"
+          }
+        }
+      }
+    },
+    "/v3.3/loan/listLoansRequest": {
+      "post": {
+        "tags": [
+          "Grant Loan APIs"
+        ],
+        "summary": "List Loans Request",
+        "requestBody": {
+          "content": {
+            "application/json;charset=utf-8": {
+              "schema": {
+                "$ref": "#/components/schemas/ListLoansRequest"
+              },
+              "example": {
+                "metadata": {
+                  "version": "1.0",
+                  "timestamp": "2018-12-06T11:39:57.153Z",
+                  "traceId": "e8cc6822bd4bbb4eb1b9e1b4996fbff8acb",
+                  "orgId": "LSP007"
+                },
+                "requestId": "e8cc6822bd4bbb4eb1b9e1b4996fbff8acb",
+                "borrower": {
+                  "primaryId": "CPAA1234A",
+                  "primaryIdType": "PAN",
+                  "category": "ORGANIZATION",
+                  "contactDetails": [
+                    {
+                      "type": "PRIMARY",
+                      "phone": "9000000000",
+                      "email": "sample@gmail.com",
+                      "address": {
+                        "hba": "<House/Building/Apartment>",
+                        "srl": "<Street/Road/Lane>",
+                        "pinCode": "542003",
+                        "state": "State",
+                        "country": "Country"
+                      }
+                    }
+                  ],
+                  "additionalIdentifiers": [
+                    {
+                      "key": "123456",
+                      "value": "AADHAAR"
+                    }
+                  ],
+                  "documents": [
+                    {
+                      "source": "AA",
+                      "sourceIdentifier": "GSTN",
+                      "format": "DOC",
+                      "reference": "e8cc6822bd4bbb4eb1b9e1b4996fbff8acb",
+                      "type": "GSTN_PROFILE",
+                      "isDataInline": true,
+                      "data": "<Base64 encoded string>"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json;charset=utf-8": {
+                "schema": {
+                  "$ref": "#/components/schemas/Ack"
+                },
+                "example": {
+                  "ack": {
+                    "error": "0",
+                    "traceId": "e8cc6822bd4bbb4eb1b9e1b4996fbff8acb",
+                    "timestamp": "2018-12-06T11:39:57.153Z"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid `body`"
+          }
+        }
+      }
+    },
+    "/v3.3/loan/listLoansResponse": {
+      "post": {
+        "tags": [
+          "Grant Loan APIs"
+        ],
+        "summary": "List Loans Response",
+        "requestBody": {
+          "content": {
+            "application/json;charset=utf-8": {
+              "schema": {
+                "$ref": "#/components/schemas/ListLoansResponse"
+              },
+              "example": {
+                "metadata": {
+                  "version": "1.0",
+                  "timestamp": "2018-12-06T11:39:57.153Z",
+                  "traceId": "e8cc6822bd4bbb4eb1b9e1b4996fbff8acb",
+                  "orgId": "LSP007"
+                },
+                "requestId": "e8cc6822bd4bbb4eb1b9e1b4996fbff8acb",
+                "response": {
+                  "error": "0"
+                },
+                "loans": [
+                  {
+                    "loanId": "e8cc6822bd4bbb4eb1b9e1b4996fbff8acb",
+                    "terms": {
+                      "requestedAmount": "50000.00",
+                      "currency": "INR",
+                      "sanctionedAmount": "50000.00",
+                      "interestType": "FIXED",
+                      "interestRate": "12.00",
+                      "interestAmount": "6000.00",
+                      "totalAmount": "56000.00",
+                      "tenure": {
+                        "duration": "3",
+                        "unit": "MONTH"
+                      },
+                      "legalAgreement": {
+                        "type": "TEXT",
+                        "data": "<Base64 Encoded Data>"
+                      },
+                      "documents": [
+                        {
+                          "source": "GSTN",
+                          "sourceIdentifier": "GSTN",
+                          "format": "DOC",
+                          "reference": "e8cc6822bd4bbb4eb1b9e1b4996fbff8acb",
+                          "type": "GST_PROFILE",
+                          "isDataInline": "true",
+                          "data": "Base64 encoded string"
+                        }
+                      ],
+                      "charges": {
+                        "prepayment": {
+                          "chargeType": "RATE_BASED",
+                          "description": "Description of charge calculation",
+                          "data": {
+                            "rate": "6",
+                            "applicableParameter": "TOTAL_LOAN_AMOUNT"
+                          }
+                        },
+                        "bounce": {
+                          "chargeType": "FIXED_AMOUNT",
+                          "data": {
+                            "amount": "3000.00"
+                          }
+                        },
+                        "latePayment": {
+                          "chargeType": "FIXED_AMOUNT",
+                          "data": {
+                            "amount": "3000.00",
+                            "description": "Description of charge calculation"
+                          }
+                        },
+                        "processing": {
+                          "chargeType": "FIXED_AMOUNT",
+                          "data": {
+                            "amount": "3000.00",
+                            "description": "Description of charge calculation"
+                          }
+                        }
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json;charset=utf-8": {
+                "schema": {
+                  "$ref": "#/components/schemas/Ack"
+                },
+                "example": {
+                  "ack": {
+                    "error": "0",
+                    "traceId": "e8cc6822bd4bbb4eb1b9e1b4996fbff8acb",
+                    "timestamp": "2018-12-06T11:39:57.153Z"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid `body`"
+          }
+        }
+      }
+    },
+    "/v3.3/repayment/getRepaymentPlansRequest": {
+      "post": {
+        "tags": [
+          "Repayment APIs"
+        ],
+        "summary": "Get Repayment Plan Request",
+        "requestBody": {
+          "content": {
+            "application/json;charset=utf-8": {
+              "schema": {
+                "$ref": "#/components/schemas/GetRepaymentPlanRequest"
+              },
+              "example": {
+                "metadata": {
+                  "version": "1.0",
+                  "timestamp": "2018-12-06T11:39:57.153Z",
+                  "traceId": "e8cc6822bd4bbb4eb1b9e1b4996fbff8acb",
+                  "orgId": "LSP007"
+                },
+                "requestId": "e8cc6822bd4bbb4eb1b9e1b4996fbff8acb",
+                "loanId": "e8cc6822bd4bbb4eb1b9e1b4996fbff8acb"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json;charset=utf-8": {
+                "schema": {
+                  "$ref": "#/components/schemas/Ack"
+                },
+                "example": {
+                  "ack": {
+                    "error": "0",
+                    "traceId": "h8cc6822bd4bbb4eb1b9e1b4996fbff8acb",
+                    "timestamp": "2018-12-06T11:39:57.153Z"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid `body`"
+          }
+        }
+      }
+    },
+    "/v3.3/repayment/getRepaymentPlanResponse": {
+      "post": {
+        "tags": [
+          "Repayment APIs"
+        ],
+        "summary": "Get Repayment Plan Response",
+        "requestBody": {
+          "content": {
+            "application/json;charset=utf-8": {
+              "schema": {
+                "$ref": "#/components/schemas/GetRepaymentPlanResponse"
+              },
+              "example": {
+                "metadata": {
+                  "version": "1.0",
+                  "timestamp": "2018-12-06T11:39:57.153Z",
+                  "traceId": "e8cc6822bd4bbb4eb1b9e1b4996fbff8acb",
+                  "orgId": "LSP007"
+                },
+                "response": {
+                  "error": "0"
+                },
+                "requestId": "e8cc6822bd4bbb4eb1b9e1b4996fbff8acb",
+                "plans": [
+                  {
+                    "id": "a8cc6822bd4bbb4eb1b9e1b4996fbff8acb",
+                    "title": "Title of the repayment plan",
+                    "shortDescription": "short description of repayment plan",
+                    "automatic": "false",
+                    "payNowAllowed": "false",
+                    "changeMethodAllowed": "false",
+                    "scheduleType": "ONE_TIME",
+                    "noOfInstallments": "1",
+                    "tenure": {},
+                    "totalAmount": "10000.00",
+                    "url": "lender url showing repayment details"
+                  },
+                  {
+                    "id": "hb8c6822bd4bbb4eb1b9e1b4996fbff8acb",
+                    "title": "Title of the repayment plan",
+                    "shortDescription": "short description of repayment plan",
+                    "automatic": "false",
+                    "payNowAllowed": "false",
+                    "changeMethodAllowed": "false",
+                    "scheduleType": "ONE_TIME",
+                    "noOfInstallments": "1",
+                    "totalAmount": "10000.00",
+                    "url": "lender url showing repayment details"
+                  }
+                ]
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json;charset=utf-8": {
+                "schema": {
+                  "$ref": "#/components/schemas/Ack"
+                },
+                "example": {
+                  "ack": {
+                    "error": "0",
+                    "traceId": "h8cc6822bd4bbb4eb1b9e1b4996fbff8acb",
+                    "timestamp": "2018-12-06T11:39:57.153Z"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid `body`"
+          }
+        }
+      }
+    },
+    "/v3.3/repayment/setRepaymentPlanRequest": {
+      "post": {
+        "tags": [
+          "Repayment APIs"
+        ],
+        "summary": "Set Repayment Plan Request",
+        "requestBody": {
+          "content": {
+            "application/json;charset=utf-8": {
+              "schema": {
+                "$ref": "#/components/schemas/SetRepaymentPlanRequest"
+              },
+              "example": {
+                "metadata": {
+                  "version": "1.0",
+                  "timestamp": "2018-12-06T11:39:57.153Z",
+                  "traceId": "e8cc6822bd4bbb4eb1b9e1b4996fbff8acb",
+                  "orgId": "LSP007"
+                },
+                "loanApplicationId": "e8cc6822bd4bbb4eb1b9e1b4996fbff8acb",
+                "requestId": "e8cc6822bd4bbb4eb1b9e1b4996fbff8acb",
+                "plan": {
+                  "id": "z8cc6822bd4bbb4eb1b9e1b4996fbff8acb",
+                  "automatic": "false",
+                  "scheduleType": "ONE_TIME",
+                  "noOfInstallments": "1",
+                  "tenure": {},
+                  "totalAmount": "10000.00"
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json;charset=utf-8": {
+                "schema": {
+                  "$ref": "#/components/schemas/Ack"
+                },
+                "example": {
+                  "ack": {
+                    "error": "0",
+                    "traceId": "e8cc6822bd4bbb4eb1b9e1b4996fbff8acb",
+                    "timestamp": "2018-12-06T11:39:57.153Z"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid `body`"
+          }
+        }
+      }
+    },
+    "/v3.3/repayment/setRepaymentPlanResponse": {
+      "post": {
+        "tags": [
+          "Repayment APIs"
+        ],
+        "summary": "Set Repayment Plan Response",
+        "requestBody": {
+          "content": {
+            "application/json;charset=utf-8": {
+              "schema": {
+                "$ref": "#/components/schemas/SetRepaymentPlanResponse"
+              },
+              "example": {
+                "metadata": {
+                  "version": "1.0",
+                  "timestamp": "2018-12-06T11:39:57.153Z",
+                  "traceId": "e8cc6822bd4bbb4eb1b9e1b4996fbff8acb",
+                  "orgId": "LSP007"
+                },
+                "response": {
+                  "error": "0"
+                },
+                "requestId": "e8cc6822bd4bbb4eb1b9e1b4996fbff8acb",
+                "plan": {
+                  "id": "z8cc6822bd4bbb4eb1b9e1b4996fbff8acb",
+                  "paymentUrl": "https://abcbank.in/z8cc6822bd4bbb4eb1b9e1b4996fbff8acb",
+                  "status": "PENDING_AUTH",
+                  "automatic": "false",
+                  "payNowAllowed": "false",
+                  "changeMethodAllowed": "false",
+                  "scheduleType": "ONE_TIME",
+                  "noOfInstallments": "1",
+                  "tenure": {},
+                  "totalAmount\"": "10000.00"
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json;charset=utf-8": {
+                "schema": {
+                  "$ref": "#/components/schemas/Ack"
+                },
+                "example": {
+                  "ack": {
+                    "error": "0",
+                    "traceId": "e8cc6822bd4bbb4eb1b9e1b4996fbff8acb",
+                    "timestamp": "2018-12-06T11:39:57.153Z"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid `body`"
+          }
+        }
+      }
+    },
+    "/v3.3/repayment/setRepaymentPlanStatusRequest": {
+      "post": {
+        "tags": [
+          "Repayment APIs"
+        ],
+        "summary": "Set Repayment Plan Status Request",
+        "requestBody": {
+          "content": {
+            "application/json;charset=utf-8": {
+              "schema": {
+                "$ref": "#/components/schemas/SetRepaymentPlanStatusRequest"
+              },
+              "example": {
+                "metadata": {
+                  "version": "1.0",
+                  "timestamp": "2018-12-06T11:39:57.153Z",
+                  "traceId": "e8cc6822bd4bbb4eb1b9e1b4996fbff8acb",
+                  "orgId": "LSP007"
+                },
+                "requestId": "e8cc6822bd4bbb4eb1b9e1b4996fbff8acb",
+                "plan": {
+                  "id": "z8cc6822bd4bbb4eb1b9e1b4996fbff8acb",
+                  "automatic": "false",
+                  "scheduleType": "ONE_TIME",
+                  "noOfInstallments": "1",
+                  "tenure": {},
+                  "totalAmount": "10000.0"
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json;charset=utf-8": {
+                "schema": {
+                  "$ref": "#/components/schemas/Ack"
+                },
+                "example": {
+                  "ack": {
+                    "error": "0",
+                    "traceId": "e8cc6822bd4bbb4eb1b9e1b4996fbff8acb",
+                    "timestamp": "2018-12-06T11:39:57.153Z"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid `body`"
+          }
+        }
+      }
+    },
+    "/v3.3/repayment/setRepaymentPlanStatusResponse": {
+      "post": {
+        "tags": [
+          "Repayment APIs"
+        ],
+        "summary": "Set Repayment Plan Status Response",
+        "requestBody": {
+          "content": {
+            "application/json;charset=utf-8": {
+              "schema": {
+                "$ref": "#/components/schemas/SetRepaymentPlanStatusResponse"
+              },
+              "example": {
+                "metadata": {
+                  "version": "1.0",
+                  "timestamp": "2018-12-06T11:39:57.153Z",
+                  "traceId": "e8cc6822bd4bbb4eb1b9e1b4996fbff8acb",
+                  "orgId": "LSP007"
+                },
+                "response": {
+                  "error": "0"
+                },
+                "requestId": "e8cc6822bd4bbb4eb1b9e1b4996fbff8acb",
+                "plan": {
+                  "id": "z8cc6822bd4bbb4eb1b9e1b4996fbff8acb",
+                  "automatic": "false",
+                  "payNowAllowed": "false",
+                  "changeMethodAllowed": "false",
+                  "scheduleType": "ONE_TIME",
+                  "noOfInstallments": "1",
+                  "tenure": {},
+                  "status": "ACTIVE",
+                  "totalAmount": "10000.00"
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json;charset=utf-8": {
+                "schema": {
+                  "$ref": "#/components/schemas/Ack"
+                },
+                "example": {
+                  "ack": {
+                    "error": "0",
+                    "traceId": "e8cc6822bd4bbb4eb1b9e1b4996fbff8acb",
+                    "timestamp": "2018-12-06T11:39:57.153Z"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid `body`"
+          }
+        }
+      }
+    },
+    "/v3.3/repayment/triggerRepaymentStatusRequest": {
+      "post": {
+        "tags": [
+          "Repayment APIs"
+        ],
+        "summary": "Trigger Repayment Status Request",
+        "requestBody": {
+          "content": {
+            "application/json;charset=utf-8": {
+              "schema": {
+                "$ref": "#/components/schemas/TriggerRepaymentStatusRequest"
+              },
+              "example": {
+                "metadata": {
+                  "version": "1.0",
+                  "timestamp": "2018-12-06T11:39:57.153Z",
+                  "traceId": "e8cc6822bd4bbb4eb1b9e1b4996fbff8acb",
+                  "orgId": "LSP007"
+                },
+                "requestId": "e8cc6822bd4bbb4eb1b9e1b4996fbff8acb",
+                "loanId": "e8cc6822bd4bbb4eb1b9e1b4996fbff8acb",
+                "payment": {
+                  "id": "hhcc6822bd4bbb4eb1b9e1b4996fbff8acb"
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json;charset=utf-8": {
+                "schema": {
+                  "$ref": "#/components/schemas/Ack"
+                },
+                "example": {
+                  "ack": {
+                    "error": "0",
+                    "traceId": "e8cc6822bd4bbb4eb1b9e1b4996fbff8acb",
+                    "timestamp": "2018-12-06T11:39:57.153Z"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid `body`"
+          }
+        }
+      }
+    },
+    "/v3.3/repayment/triggerRepaymentStatusResponse": {
+      "post": {
+        "tags": [
+          "Repayment APIs"
+        ],
+        "summary": "Trigger Repayment Status Request",
+        "requestBody": {
+          "content": {
+            "application/json;charset=utf-8": {
+              "schema": {
+                "$ref": "#/components/schemas/TriggerRepaymentStatusResponse"
+              },
+              "example": {
+                "metadata": {
+                  "version": "1.0",
+                  "timestamp": "2018-12-06T11:39:57.153Z",
+                  "traceId": "e8cc6822bd4bbb4eb1b9e1b4996fbff8acb",
+                  "orgId": "LSP007"
+                },
+                "requestId": "e8cc6822bd4bbb4eb1b9e1b4996fbff8acb",
+                "response": {
+                  "error": "0"
+                },
+                "payment": {
+                  "id": "e8cc6822bd4bbb4eb1b9e1b4996fbff8adf",
+                  "date": "2018-12-06T11:39:57.153Z",
+                  "totalAmount": "5000.00",
+                  "installmentNumber": "1",
+                  "status": "SUCCESS",
+                  "paymentMethodType": "UPI",
+                  "txnRefNo": "004618602124"
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json;charset=utf-8": {
+                "schema": {
+                  "$ref": "#/components/schemas/Ack"
+                },
+                "example": {
+                  "ack": {
+                    "error": "0",
+                    "traceId": "e8cc6822bd4bbb4eb1b9e1b4996fbff8acb",
+                    "timestamp": "2018-12-06T11:39:57.153Z"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid `body`"
+          }
+        }
+      }
+    },
+    "/v3.3/repayment/triggerRepaymentRequest": {
+      "post": {
+        "tags": [
+          "Repayment APIs"
+        ],
+        "summary": "Trigger Repayment Request",
+        "requestBody": {
+          "content": {
+            "application/json;charset=utf-8": {
+              "schema": {
+                "$ref": "#/components/schemas/TriggerRepaymentRequest"
+              },
+              "example": {
+                "metadata": {
+                  "version": "1.0",
+                  "timestamp": "2018-12-06T11:39:57.153Z",
+                  "traceId": "e8cc6822bd4bbb4eb1b9e1b4996fbff8acb",
+                  "orgId": "LSP007"
+                },
+                "requestId": "e8cc6822bd4bbb4eb1b9e1b4996fbff8acb",
+                "loanId": "e8cc6822bd4bbb4eb1b9e1b4996fbff8acb",
+                "payment": {
+                  "id": "hhcc6822bd4bbb4eb1b9e1b4996fbff8acb"
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json;charset=utf-8": {
+                "schema": {
+                  "$ref": "#/components/schemas/Ack"
+                },
+                "example": {
+                  "ack": {
+                    "error": "0",
+                    "traceId": "e8cc6822bd4bbb4eb1b9e1b4996fbff8acb",
+                    "timestamp": "2018-12-06T11:39:57.153Z"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid `body`"
+          }
+        }
+      }
+    },
+    "/v3.3/repayment/triggerRepaymentResponse": {
+      "post": {
+        "tags": [
+          "Repayment APIs"
+        ],
+        "summary": "Trigger Repayment Response",
+        "requestBody": {
+          "content": {
+            "application/json;charset=utf-8": {
+              "schema": {
+                "$ref": "#/components/schemas/TriggerRepaymentResponse"
+              },
+              "example": {
+                "metadata": {
+                  "version": "1.0",
+                  "timestamp": "2018-12-06T11:39:57.153Z",
+                  "traceId": "e8cc6822bd4bbb4eb1b9e1b4996fbff8acb",
+                  "orgId": "LSP007"
+                },
+                "requestId": "e8cc6822bd4bbb4eb1b9e1b4996fbff8acb",
+                "response": {
+                  "error": "0"
+                },
+                "payment": {
+                  "id": "hhcc6822bd4bbb4eb1b9e1b4996fbff8acb",
+                  "status": "PENDING_AUTH",
+                  "paymentUrl": "https://abcbank.in/hhcc6822bd4bbb4eb1b9e1b4996fbff8acb"
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json;charset=utf-8": {
+                "schema": {
+                  "$ref": "#/components/schemas/Ack"
+                },
+                "example": {
+                  "ack": {
+                    "error": "0",
+                    "traceId": "e8cc6822bd4bbb4eb1b9e1b4996fbff8acb",
+                    "timestamp": "2018-12-06T11:39:57.153Z"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid `body`"
+          }
+        }
+      }
+    },
+    "/v3.3/repayment/confirmRepayment": {
+      "post": {
+        "tags": [
+          "Repayment APIs"
+        ],
+        "summary": "Confirm Repayment",
+        "requestBody": {
+          "content": {
+            "application/json;charset=utf-8": {
+              "schema": {
+                "$ref": "#/components/schemas/ConfirmRepayment"
+              },
+              "example": {
+                "metadata": {
+                  "version": "1.0",
+                  "timestamp": "2018-12-06T11:39:57.153Z",
+                  "traceId": "e8cc6822bd4bbb4eb1b9e1b4996fbff8acb",
+                  "orgId": "LSP007"
+                },
+                "requestId": "e8cc6822bd4bbb4eb1b9e1b4996fbff8acb",
+                "loanId": "e8cc6822bd4bbb4eb1b9e1b4996fbff8acb",
+                "response": {
+                  "error": "0"
+                },
+                "payment": {
+                  "id": "e8cc6822bd4bbb4eb1b9e1b4996fbff8adf",
+                  "paymentMethodType": "EMANDATE_UPI",
+                  "totalAmount": "5000.00",
+                  "date": "2018-12-06T11:39:57.153Z",
+                  "status": "SUCCESS",
+                  "installmentNumber": "1",
+                  "txnRefNo": "004618602124"
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json;charset=utf-8": {
+                "schema": {
+                  "$ref": "#/components/schemas/Ack"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid `body`"
+          }
+        }
+      }
+    },
+    "/v3.3/heartbeat": {
+      "post": {
+        "tags": [
+          "Meta APIs"
+        ],
+        "summary": "Hearbeat API",
+        "responses": {
+          "200": {
+            "description": "Hearbeat API",
+            "content": {
+              "application/json;charset=utf-8": {
+                "schema": {
+                  "$ref": "#/components/schemas/HeartBeatResponse"
+                },
+                "example": {
+                  "metadata": {
+                    "version": "1.0",
+                    "timestamp": "2018-12-06T11:39:57.153Z",
+                    "traceId": "e8cc6822bd4bbb4eb1b9e1b4996fbff8acb",
+                    "orgId": "LSP007"
+                  },
+                  "response": {
+                    "error": "0"
+                  },
+                  "status": "SUCCESS"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid `request`"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Ack": {
+        "required": [
+          "ack"
+        ],
+        "type": "object",
+        "properties": {
+          "ack": {
+            "$ref": "#/components/schemas/AckBody"
+          }
+        }
+      },
+      "AckBody": {
+        "required": [
+          "error",
+          "timestamp",
+          "traceId"
+        ],
+        "type": "object",
+        "properties": {
+          "error": {
+            "type": "string",
+            "example": "0"
+          },
+          "traceId": {
+            "type": "string",
+            "example": "e8cc6822-d4bb-4eb1-9e1b-4996fbff8acb"
+          },
+          "timestamp": {
+            "type": "string",
+            "example": "2018-12-06T11:39:57.153Z"
+          }
+        }
+      },
+      "CreateLoanApplicationResponse": {
+        "required": [
+          "lender",
+          "loanApplications",
+          "metadata",
+          "requestId",
+          "response"
+        ],
+        "type": "object",
+        "properties": {
+          "metadata": {
+            "$ref": "#/components/schemas/Metadata"
+          },
+          "response": {
+            "$ref": "#/components/schemas/Response"
+          },
+          "requestId": {
+            "type": "string",
+            "example": "e8cc6822bd4bbb4eb1b9e1b4996fbff8acb"
+          },
+          "loanApplications": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/LoanApplication"
+            }
+          },
+          "lender": {
+            "$ref": "#/components/schemas/Lender"
+          }
+        }
+      },
+      "Metadata": {
+        "required": [
+          "orgId",
+          "timestamp",
+          "traceId",
+          "version"
+        ],
+        "type": "object",
+        "properties": {
+          "version": {
+            "type": "string",
+            "example": "1.0"
+          },
+          "timestamp": {
+            "$ref": "#/components/schemas/UTCTime"
+          },
+          "traceId": {
+            "type": "string",
+            "example": "e8cc6822bd4bbb4eb1b9e1b4996fbff8acb"
+          },
+          "orgId": {
+            "type": "string",
+            "example": "LSP007"
+          }
+        }
+      },
+      "UTCTime": {
+        "type": "string",
+        "format": "yyyy-mm-ddThh:MM:ssZ",
+        "example": "2016-07-22T00:00:00Z"
+      },
+      "Response": {
+        "required": [
+          "error"
+        ],
+        "type": "object",
+        "properties": {
+          "error": {
+            "type": "string",
+            "example": "0"
+          }
+        }
+      },
+      "LoanApplication": {
+        "required": [
+          "loanApplicationId"
+        ],
+        "type": "object",
+        "properties": {
+          "createdDate": {
+            "$ref": "#/components/schemas/UTCTime"
+          },
+          "loanApplicationId": {
+            "type": "string",
+            "example": "e8cc6822bd4bbb4eb1b9e1b4996fbff8acb"
+          },
+          "type": {
+            "$ref": "#/components/schemas/LoanType"
+          },
+          "borrower": {
+            "$ref": "#/components/schemas/Borrower"
+          },
+          "collaterals": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Collateral"
+            }
+          },
+          "guarantors": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Guarantor"
+            }
+          },
+          "applicants": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Applicant"
+            }
+          },
+          "terms": {
+            "$ref": "#/components/schemas/TermDetails"
+          },
+          "description": {
+            "type": "string",
+            "example": "A short description of the loan application"
+          },
+          "url": {
+            "type": "string",
+            "example": "url"
+          },
+          "extensibleData": {
+            "type": "string",
+            "example": "extensibleData"
+          },
+          "loanApplicationStatus": {
+            "$ref": "#/components/schemas/LoanApplicationStatus"
+          },
+          "offers": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Offer"
+            }
+          },
+          "lender": {
+            "$ref": "#/components/schemas/Lender"
+          }
+        }
+      },
+      "LoanType": {
+        "type": "string",
+        "enum": [
+          "CASHFLOW",
+          "PERSONAL",
+          "HOME",
+          "VEHICLE",
+          "BUSINESS"
+        ]
+      },
+      "Borrower": {
+        "required": [
+          "additionalIdentifiers",
+          "category",
+          "contactDetails",
+          "documents",
+          "primaryId",
+          "primaryIdType"
+        ],
+        "type": "object",
+        "properties": {
+          "primaryId": {
+            "type": "string",
+            "example": "CPAA1234A"
+          },
+          "primaryIdType": {
+            "$ref": "#/components/schemas/BorrowerPrimaryIdType"
+          },
+          "category": {
+            "$ref": "#/components/schemas/BorrowerCategory"
+          },
+          "name": {
+            "type": "string",
+            "example": "John doe"
+          },
+          "contactDetails": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ContactDetail"
+            }
+          },
+          "additionalIdentifiers": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AdditionalIdentifier"
+            }
+          },
+          "documents": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Document"
+            }
+          }
+        }
+      },
+      "BorrowerPrimaryIdType": {
+        "type": "string",
+        "enum": [
+          "PAN",
+          "MOBILE",
+          "AADHAAR"
+        ]
+      },
+      "BorrowerCategory": {
+        "type": "string",
+        "enum": [
+          "ORGANIZATION",
+          "INDIVIDUAL"
+        ]
+      },
+      "ContactDetail": {
+        "required": [
+          "address",
+          "email",
+          "phone",
+          "type"
+        ],
+        "type": "object",
+        "properties": {
+          "type": {
+            "$ref": "#/components/schemas/ContactDetailType"
+          },
+          "phone": {
+            "type": "string",
+            "example": "7777777777"
+          },
+          "email": {
+            "type": "string",
+            "example": "johndoe@defenterprises"
+          },
+          "address": {
+            "$ref": "#/components/schemas/Address"
+          }
+        }
+      },
+      "ContactDetailType": {
+        "type": "string",
+        "enum": [
+          "PRIMARY",
+          "OTHER"
+        ]
+      },
+      "Address": {
+        "type": "object",
+        "properties": {
+          "co": {
+            "type": "string",
+            "example": "<care of>"
+          },
+          "hba": {
+            "type": "string",
+            "example": "<House/Building/Apartment>"
+          },
+          "srl": {
+            "type": "string",
+            "example": "<Street/Road/Lane>"
+          },
+          "landmark": {
+            "type": "string",
+            "example": "<landmark>"
+          },
+          "als": {
+            "type": "string",
+            "example": "<Area/Locality/Sector>"
+          },
+          "vtc": {
+            "type": "string",
+            "example": "<Village/Town/City>"
+          },
+          "pinCode": {
+            "type": "string",
+            "example": "220020"
+          },
+          "po": {
+            "type": "string",
+            "example": "po"
+          },
+          "district": {
+            "type": "string",
+            "example": "district"
+          },
+          "state": {
+            "type": "string",
+            "example": "state"
+          },
+          "country": {
+            "type": "string",
+            "example": "country"
+          },
+          "url": {
+            "type": "string",
+            "example": "<digital address>"
+          },
+          "latitude": {
+            "type": "string",
+            "example": "38.8951"
+          },
+          "longitude": {
+            "type": "string",
+            "example": "-77.0364"
+          }
+        }
+      },
+      "AdditionalIdentifier": {
+        "required": [
+          "additionalIdentifierType",
+          "id"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "additionalIdentifierType": {
+            "$ref": "#/components/schemas/AdditionalIdentifierType"
+          }
+        }
+      },
+      "AdditionalIdentifierType": {
+        "type": "string",
+        "enum": [
+          "PAN",
+          "MOBILE",
+          "AADHAAR"
+        ]
+      },
+      "Collateral": {
+        "required": [
+          "additionalIdentifiers",
+          "collateralPrimaryId",
+          "collateralPrimaryIdType",
+          "documents",
+          "parties",
+          "type"
+        ],
+        "type": "object",
+        "properties": {
+          "collateralPrimaryId": {
+            "type": "string",
+            "example": "<GSTIN>_<INVOICENUM>"
+          },
+          "collateralPrimaryIdType": {
+            "$ref": "#/components/schemas/CollateralPrimaryIdType"
+          },
+          "type": {
+            "type": "string",
+            "example": "GST_INVOICE"
+          },
+          "additionalIdentifiers": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AdditionalIdentifier"
+            }
+          },
+          "valuation": {
+            "$ref": "#/components/schemas/Valuation"
+          },
+          "parties": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Party"
+            }
+          },
+          "documents": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Document"
+            }
+          },
+          "url": {
+            "type": "string",
+            "example": "url"
+          },
+          "extensibleData": {
+            "type": "string",
+            "example": "extensibleData"
+          }
+        }
+      },
+      "CollateralPrimaryIdType": {
+        "type": "string",
+        "enum": [
+          "GST_INVOICE",
+          "VIN",
+          "OTHER"
+        ]
+      },
+      "Valuation": {
+        "required": [
+          "currency",
+          "date",
+          "source",
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "string",
+            "example": "2000"
+          },
+          "currency": {
+            "type": "string",
+            "example": "INR"
+          },
+          "date": {
+            "$ref": "#/components/schemas/UTCTime"
+          },
+          "source": {
+            "type": "string",
+            "example": "GSTIN"
+          },
+          "url": {
+            "type": "string",
+            "example": "url"
+          },
+          "extensibleData": {
+            "type": "string",
+            "example": "extensibleData"
+          }
+        }
+      },
+      "Party": {
+        "required": [
+          "category",
+          "contactDetails",
+          "documents",
+          "name",
+          "primaryId",
+          "primaryIdType",
+          "relationshipWithCollateral"
+        ],
+        "type": "object",
+        "properties": {
+          "primaryIdType": {
+            "$ref": "#/components/schemas/EntityPrimaryIdType"
+          },
+          "primaryId": {
+            "type": "string",
+            "example": "AAAAA8888A"
+          },
+          "category": {
+            "$ref": "#/components/schemas/EntityCategory"
+          },
+          "name": {
+            "type": "string",
+            "example": "John doe"
+          },
+          "relationshipWithCollateral": {
+            "type": "string",
+            "example": "relationshipWithCollateral"
+          },
+          "contactDetails": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ContactDetail"
+            }
+          },
+          "additionalIdentifiers": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AdditionalIdentifier"
+            }
+          },
+          "documents": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Document"
+            }
+          },
+          "url": {
+            "type": "string",
+            "example": "url"
+          },
+          "extensibleData": {
+            "type": "string",
+            "example": "extensibleData"
+          }
+        }
+      },
+      "EntityPrimaryIdType": {
+        "type": "string",
+        "enum": [
+          "PAN",
+          "MOBILE",
+          "AADHAAR"
+        ]
+      },
+      "EntityCategory": {
+        "type": "string",
+        "enum": [
+          "ORGANIZATION",
+          "INDIVIDUAL"
+        ]
+      },
+      "Guarantor": {
+        "required": [
+          "additionalIdentifiers",
+          "category",
+          "contactDetails",
+          "documents",
+          "primaryId",
+          "primaryIdType"
+        ],
+        "type": "object",
+        "properties": {
+          "primaryIdType": {
+            "$ref": "#/components/schemas/EntityPrimaryIdType"
+          },
+          "primaryId": {
+            "type": "string",
+            "example": "CPAA1234A"
+          },
+          "category": {
+            "$ref": "#/components/schemas/EntityCategory"
+          },
+          "name": {
+            "type": "string",
+            "example": "John doe"
+          },
+          "relationshipWithBorrower": {
+            "type": "string",
+            "example": "Father"
+          },
+          "contactDetails": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ContactDetail"
+            }
+          },
+          "additionalIdentifiers": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AdditionalIdentifier"
+            }
+          },
+          "documents": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Document"
+            }
+          }
+        }
+      },
+      "Applicant": {
+        "required": [
+          "additionalIdentifiers",
+          "category",
+          "contactDetails",
+          "documents",
+          "primaryId",
+          "primaryIdType"
+        ],
+        "type": "object",
+        "properties": {
+          "primaryIdType": {
+            "$ref": "#/components/schemas/EntityPrimaryIdType"
+          },
+          "primaryId": {
+            "type": "string",
+            "example": "AAAAA8888A"
+          },
+          "category": {
+            "$ref": "#/components/schemas/EntityCategory"
+          },
+          "name": {
+            "type": "string",
+            "example": "John doe"
+          },
+          "relationshipWithBorrower": {
+            "type": "string",
+            "example": "Father"
+          },
+          "contactDetails": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ContactDetail"
+            }
+          },
+          "additionalIdentifiers": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AdditionalIdentifier"
+            }
+          },
+          "documents": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Document"
+            }
+          }
+        }
+      },
+      "TermDetails": {
+        "required": [
+          "currency",
+          "requestedAmount"
+        ],
+        "type": "object",
+        "properties": {
+          "requestedAmount": {
+            "type": "string",
+            "example": "50000.00"
+          },
+          "currency": {
+            "type": "string",
+            "example": "INR"
+          },
+          "account": {
+            "type": "string",
+            "example": "XXXXXXXXX9090"
+          },
+          "accountType": {
+            "$ref": "#/components/schemas/AccountType"
+          },
+          "sanctionedAmount": {
+            "type": "string",
+            "example": "5000.00"
+          },
+          "interestType": {
+            "$ref": "#/components/schemas/InterestType"
+          },
+          "interestRate": {
+            "type": "string",
+            "example": "6.50"
+          },
+          "tenure": {
+            "$ref": "#/components/schemas/LoanTenure"
+          },
+          "legalAgreement": {
+            "$ref": "#/components/schemas/LoanAgreement"
+          },
+          "documents": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Document"
+            }
+          },
+          "charges": {
+            "$ref": "#/components/schemas/Charges"
+          },
+          "url": {
+            "type": "string",
+            "example": "url"
+          },
+          "extensibleData": {
+            "type": "string",
+            "example": "extensibleData"
+          }
+        }
+      },
+      "AccountType": {
+        "type": "string",
+        "enum": [
+          "SAVINGS",
+          "CURRENT",
+          "OVERDRAFT"
+        ]
+      },
+      "InterestType": {
+        "type": "string",
+        "enum": [
+          "FIXED",
+          "FLOATING"
+        ]
+      },
+      "LoanTenure": {
+        "required": [
+          "duration",
+          "unit"
+        ],
+        "type": "object",
+        "properties": {
+          "duration": {
+            "type": "string",
+            "example": "3"
+          },
+          "unit": {
+            "$ref": "#/components/schemas/LoanTenureUnit"
+          }
+        }
+      },
+      "LoanTenureUnit": {
+        "type": "string",
+        "enum": [
+          "DAY",
+          "MONTH",
+          "YEAR"
+        ]
+      },
+      "LoanAgreement": {
+        "required": [
+          "data",
+          "type"
+        ],
+        "type": "object",
+        "properties": {
+          "type": {
+            "$ref": "#/components/schemas/LoanAgreementType"
+          },
+          "data": {
+            "type": "string",
+            "example": "<Base64 Encode Data>"
+          }
+        }
+      },
+      "LoanAgreementType": {
+        "type": "string",
+        "enum": [
+          "TEXT",
+          "URL"
+        ]
+      },
+      "Charges": {
+        "type": "object",
+        "properties": {
+          "prepayment": {
+            "$ref": "#/components/schemas/ChargeDetails"
+          },
+          "bounce": {
+            "$ref": "#/components/schemas/ChargeDetails"
+          },
+          "latePayment": {
+            "$ref": "#/components/schemas/ChargeDetails"
+          },
+          "processing": {
+            "$ref": "#/components/schemas/ChargeDetails"
+          }
+        }
+      },
+      "ChargeDetails": {
+        "required": [
+          "chargeType",
+          "data"
+        ],
+        "type": "object",
+        "properties": {
+          "chargeType": {
+            "$ref": "#/components/schemas/ChargeType"
+          },
+          "data": {
+            "$ref": "#/components/schemas/ChargeData"
+          },
+          "description": {
+            "type": "string",
+            "example": "description"
+          },
+          "url": {
+            "type": "string",
+            "example": "url"
+          },
+          "extensibleData": {
+            "type": "string",
+            "example": "extensibleData"
+          }
+        }
+      },
+      "ChargeType": {
+        "type": "string",
+        "enum": [
+          "FIXED_AMOUNT",
+          "RATE_BASED"
+        ]
+      },
+      "ChargeData": {
+        "type": "object",
+        "properties": {
+          "rate": {
+            "type": "string",
+            "example": "6.00"
+          },
+          "amount": {
+            "type": "string",
+            "example": "3000.00"
+          },
+          "description": {
+            "type": "string",
+            "example": "description"
+          },
+          "url": {
+            "type": "string",
+            "example": "url"
+          },
+          "applicableParameter": {
+            "$ref": "#/components/schemas/ApplicableParameter"
+          }
+        }
+      },
+      "ApplicableParameter": {
+        "type": "string",
+        "enum": [
+          "TOTAL_LOAN_AMOUNT",
+          "OUTSTANDING_PAYABLE_AMOUNT",
+          "EMI",
+          "PREPAYMENT_PRINCIPAL"
+        ]
+      },
+      "Lender": {
+        "required": [
+          "additionalIdentifiers",
+          "category",
+          "contactDetails",
+          "documents",
+          "primaryId",
+          "primaryIdType"
+        ],
+        "type": "object",
+        "properties": {
+          "primaryIdType": {
+            "$ref": "#/components/schemas/EntityPrimaryIdType"
+          },
+          "primaryId": {
+            "type": "string",
+            "example": "AWWPA7645M"
+          },
+          "category": {
+            "$ref": "#/components/schemas/EntityCategory"
+          },
+          "name": {
+            "type": "string",
+            "example": "ABC Bank"
+          },
+          "contactDetails": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ContactDetail"
+            }
+          },
+          "additionalIdentifiers": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AdditionalIdentifier"
+            }
+          },
+          "documents": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Document"
+            }
+          }
+        }
+      },
+      "GenerateOfferResponse": {
+        "required": [
+          "loanApplications",
+          "metadata",
+          "requestId",
+          "response"
+        ],
+        "type": "object",
+        "properties": {
+          "metadata": {
+            "$ref": "#/components/schemas/Metadata"
+          },
+          "requestId": {
+            "type": "string",
+            "example": "i8cc6822bd4bbb4eb1b9e1b4996fbff8acb"
+          },
+          "response": {
+            "$ref": "#/components/schemas/Response"
+          },
+          "loanApplications": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/LoanApplication"
+            }
+          }
+        }
+      },
+      "RejectionDetail": {
+        "required": [
+          "description",
+          "reason"
+        ],
+        "type": "object",
+        "properties": {
+          "reason": {
+            "$ref": "#/components/schemas/Reason"
+          },
+          "description": {
+            "type": "string",
+            "example": "Credit score below 600"
+          },
+          "url": {
+            "type": "string",
+            "example": "url"
+          },
+          "extensibleData": {
+            "type": "string",
+            "example": "extensibleData"
+          }
+        }
+      },
+      "Reason": {
+        "type": "string",
+        "enum": [
+          "FRAUD",
+          "DOC_IRREGULARITIES",
+          "LOW_CREDIT_SCORE",
+          "OTHERS"
+        ]
+      },
+      "ActionRequired": {
+        "required": [
+          "actionType",
+          "description"
+        ],
+        "type": "object",
+        "properties": {
+          "actionType": {
+            "$ref": "#/components/schemas/ActionType"
+          },
+          "description": {
+            "type": "string",
+            "example": "DL number not visible"
+          },
+          "reference": {
+            "$ref": "#/components/schemas/Reference"
+          }
+        }
+      },
+      "ActionType": {
+        "type": "string",
+        "enum": [
+          "ADDDOCUMENT",
+          "RESUBMITDOCUMENT",
+          "OTHER"
+        ]
+      },
+      "Offer": {
+        "required": [
+          "disbursement",
+          "documents",
+          "id",
+          "repayment",
+          "terms",
+          "validTill"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "example": "e8cc6822bd4bbb4eb1b9e1b4996fbff8acb"
+          },
+          "description": {
+            "type": "string",
+            "example": "A short description of the offer"
+          },
+          "validTill": {
+            "$ref": "#/components/schemas/UTCTime"
+          },
+          "terms": {
+            "$ref": "#/components/schemas/LoanTerms"
+          },
+          "disbursement": {
+            "$ref": "#/components/schemas/Disbursement"
+          },
+          "repayment": {
+            "$ref": "#/components/schemas/Repayment"
+          },
+          "documents": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Document"
+            }
+          },
+          "url": {
+            "type": "string",
+            "example": "url"
+          },
+          "extensibleData": {
+            "type": "string",
+            "example": "extensibleData"
+          }
+        }
+      },
+      "LoanTerms": {
+        "required": [
+          "currency",
+          "requestedAmount"
+        ],
+        "type": "object",
+        "properties": {
+          "requestedAmount": {
+            "type": "string",
+            "example": "50000.00"
+          },
+          "description": {
+            "type": "string",
+            "example": "sample description"
+          },
+          "currency": {
+            "type": "string",
+            "example": "INR"
+          },
+          "sanctionedAmount": {
+            "type": "string",
+            "example": "5000.00"
+          },
+          "interestType": {
+            "$ref": "#/components/schemas/InterestType"
+          },
+          "interestRate": {
+            "type": "string",
+            "example": "6.50"
+          },
+          "interestAmount": {
+            "type": "string",
+            "example": "6000.00"
+          },
+          "totalAmount": {
+            "type": "string",
+            "example": "56000.00"
+          },
+          "tenure": {
+            "$ref": "#/components/schemas/LoanTenure"
+          },
+          "legalAgreement": {
+            "$ref": "#/components/schemas/LegalAgreement"
+          },
+          "documents": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Document"
+            }
+          },
+          "charges": {
+            "$ref": "#/components/schemas/Charges"
+          },
+          "url": {
+            "type": "string",
+            "example": "url"
+          },
+          "extensibleData": {
+            "type": "string",
+            "example": "extensibleData"
+          }
+        }
+      },
+      "LegalAgreement": {
+        "required": [
+          "data",
+          "type"
+        ],
+        "type": "object",
+        "properties": {
+          "type": {
+            "$ref": "#/components/schemas/AgreementType"
+          },
+          "data": {
+            "type": "string",
+            "example": "<Base64 Encoded Data>"
+          }
+        }
+      },
+      "AgreementType": {
+        "type": "string",
+        "enum": [
+          "TEXT",
+          "URL"
+        ]
+      },
+      "Document": {
+        "required": [
+          "data",
+          "format",
+          "isDataInline",
+          "reference",
+          "source",
+          "sourceIdentifier",
+          "type"
+        ],
+        "type": "object",
+        "properties": {
+          "source": {
+            "$ref": "#/components/schemas/DocumentSource"
+          },
+          "sourceIdentifier": {
+            "type": "string",
+            "example": "GSTN"
+          },
+          "format": {
+            "$ref": "#/components/schemas/DocumentFormat"
+          },
+          "reference": {
+            "type": "string",
+            "example": "docref12"
+          },
+          "type": {
+            "$ref": "#/components/schemas/DocumentType"
+          },
+          "isDataInline": {
+            "type": "boolean"
+          },
+          "data": {
+            "type": "string",
+            "example": "<Base64 encoded String>"
+          }
+        }
+      },
+      "DocumentSource": {
+        "type": "string",
+        "enum": [
+          "AA",
+          "FIP",
+          "FIU",
+          "FSR",
+          "USER",
+          "GSTN"
+        ]
+      },
+      "DocumentFormat": {
+        "type": "string",
+        "enum": [
+          "DOC",
+          "IMAGE",
+          "CSV",
+          "JSON",
+          "XML"
+        ]
+      },
+      "DocumentType": {
+        "type": "string",
+        "enum": [
+          "GSTN_B2B_INVOICE",
+          "GSTN_PROFILE",
+          "PAN",
+          "AADHAAR",
+          "DRIVING_LICENSE",
+          "PASSPORT",
+          "OTHER"
+        ]
+      },
+      "Disbursement": {
+        "required": [
+          "accountDetails",
+          "plans"
+        ],
+        "type": "object",
+        "properties": {
+          "plans": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PaymentPlan"
+            }
+          },
+          "accountDetails": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AccountDetails"
+            }
+          }
+        }
+      },
+      "PaymentPlan": {
+        "required": [
+          "automatic",
+          "id",
+          "noOfInstallments",
+          "scheduleType",
+          "totalAmount"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "example": "e8cc6822bd4bbb4eb1b9e1b4996fbff8acb"
+          },
+          "title": {
+            "type": "string",
+            "example": "title of payment plan"
+          },
+          "shortDescription": {
+            "type": "string",
+            "example": "short description of payment plan"
+          },
+          "description": {
+            "type": "string",
+            "example": "description of payment plan"
+          },
+          "paymentUrl": {
+            "type": "string",
+            "example": "https://abcbank.in/z8cc6822bd4bbb4eb1b9e1b4996fbff8acb"
+          },
+          "automatic": {
+            "type": "boolean"
+          },
+          "payNowAllowed": {
+            "type": "boolean"
+          },
+          "editPlanAllowed": {
+            "type": "boolean"
+          },
+          "changeMethodAllowed": {
+            "type": "boolean"
+          },
+          "scheduleType": {
+            "$ref": "#/components/schemas/ScheduleType"
+          },
+          "frequency": {
+            "$ref": "#/components/schemas/Frequency"
+          },
+          "noOfInstallments": {
+            "type": "string",
+            "example": "1"
+          },
+          "tenure": {
+            "$ref": "#/components/schemas/LoanTenure"
+          },
+          "principal": {
+            "type": "string",
+            "example": "9000.00"
+          },
+          "interestAmount": {
+            "type": "string",
+            "example": "1000.00"
+          },
+          "penalty": {
+            "type": "string",
+            "example": "0.00"
+          },
+          "startDate": {
+            "$ref": "#/components/schemas/UTCTime"
+          },
+          "status": {
+            "$ref": "#/components/schemas/PaymentPlanStatus"
+          },
+          "totalAmount": {
+            "type": "string",
+            "example": "10000.00"
+          },
+          "url": {
+            "type": "string",
+            "example": "url"
+          },
+          "extensibleData": {
+            "type": "string",
+            "example": "extensibleData"
+          }
+        }
+      },
+      "Frequency": {
+        "type": "string",
+        "enum": [
+          "WEEKLY",
+          "MONTHLY",
+          "QUARTERLY",
+          "HALF_YEARLY",
+          "YEARLY"
+        ]
+      },
+      "PaymentPlanStatus": {
+        "type": "string",
+        "enum": [
+          "ACTIVE",
+          "INACTIVE",
+          "PENDING_AUTH"
+        ]
+      },
+      "AccountDetails": {
+        "required": [
+          "accountDataType",
+          "data"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "example": "hb8c6822bd4bbb4eb1b9e1b4996fbff8acb"
+          },
+          "description": {
+            "type": "string",
+            "example": "sample description"
+          },
+          "status": {
+            "$ref": "#/components/schemas/AccountDetailsStatus"
+          },
+          "accountDataType": {
+            "$ref": "#/components/schemas/AccountDataType"
+          },
+          "data": {
+            "$ref": "#/components/schemas/AccountDetailsData"
+          },
+          "url": {
+            "type": "string",
+            "example": "url"
+          },
+          "extensibleData": {
+            "type": "string",
+            "example": "extensibleData"
+          }
+        }
+      },
+      "AccountDetailsStatus": {
+        "type": "string",
+        "enum": [
+          "ACTIVE",
+          "INACTIVE"
+        ]
+      },
+      "AccountDataType": {
+        "type": "string",
+        "enum": [
+          "ACCOUNT",
+          "VPA"
+        ]
+      },
+      "AccountDetailsData": {
+        "type": "object",
+        "properties": {
+          "accountType": {
+            "$ref": "#/components/schemas/AccountType"
+          },
+          "accountIFSC": {
+            "type": "string",
+            "example": "IKCC0009"
+          },
+          "accountNumber": {
+            "type": "string",
+            "example": "1112090999090"
+          },
+          "vpa": {
+            "type": "string",
+            "example": "vpa"
+          },
+          "maskedAccountNumber": {
+            "type": "string",
+            "example": "XXXXXXXXX9090"
+          }
+        }
+      },
+      "Repayment": {
+        "required": [
+          "plans"
+        ],
+        "type": "object",
+        "properties": {
+          "plans": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PaymentPlan"
+            }
+          }
+        }
+      },
+      "LoanApplicationStatus": {
+        "type": "string",
+        "enum": [
+          "PROCESSING",
+          "OFFERED",
+          "GRANTED",
+          "REJECTED",
+          "ACTION_REQUIRED"
+        ]
+      },
+      "SetOfferResponse": {
+        "required": [
+          "loanApplicationId",
+          "loanApplicationStatus",
+          "metadata",
+          "requestId",
+          "response"
+        ],
+        "type": "object",
+        "properties": {
+          "metadata": {
+            "$ref": "#/components/schemas/Metadata"
+          },
+          "response": {
+            "$ref": "#/components/schemas/Response"
+          },
+          "requestId": {
+            "type": "string",
+            "example": "w8cc6822bd4bbb4eb1b9e1b4996fbff8acb"
+          },
+          "loanApplicationStatus": {
+            "$ref": "#/components/schemas/LoanApplicationStatus"
+          },
+          "loanApplicationId": {
+            "type": "string",
+            "example": "w8cc6822bd4bbb4eb1b9e1b4996fbff8acb"
+          }
+        }
+      },
+      "SetDisbursementAccountResponse": {
+        "required": [
+          "account",
+          "metadata",
+          "requestId",
+          "response"
+        ],
+        "type": "object",
+        "properties": {
+          "metadata": {
+            "$ref": "#/components/schemas/Metadata"
+          },
+          "response": {
+            "$ref": "#/components/schemas/Response"
+          },
+          "requestId": {
+            "type": "string",
+            "example": "e8cc6822bd4bbb4eb1b9e1b4996fbff8acb"
+          },
+          "account": {
+            "$ref": "#/components/schemas/AccountDetails"
+          }
+        }
+      },
+      "TriggerDisbursementResponse": {
+        "required": [
+          "metadata",
+          "payment",
+          "requestId",
+          "response"
+        ],
+        "type": "object",
+        "properties": {
+          "metadata": {
+            "$ref": "#/components/schemas/Metadata"
+          },
+          "response": {
+            "$ref": "#/components/schemas/Response"
+          },
+          "requestId": {
+            "type": "string",
+            "example": "e8cc6822bd4bbb4eb1b9e1b4996fbff8acb"
+          },
+          "payment": {
+            "$ref": "#/components/schemas/Payment"
+          }
+        }
+      },
+      "Payment": {
+        "required": [
+          "id"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "example": "e8cc6822bd4bbb4eb1b9e1b4996fbff8adf"
+          },
+          "description": {
+            "type": "string",
+            "example": "sample description"
+          },
+          "date": {
+            "$ref": "#/components/schemas/UTCTime"
+          },
+          "principal": {
+            "type": "string",
+            "example": "4000.00"
+          },
+          "interestAmount": {
+            "type": "string",
+            "example": "1000.0"
+          },
+          "fee": {
+            "type": "string",
+            "example": "0.00"
+          },
+          "penalty": {
+            "type": "string",
+            "example": "0.00"
+          },
+          "totalAmount": {
+            "type": "string",
+            "example": "5000.00"
+          },
+          "installmentNumber": {
+            "type": "string",
+            "example": "1"
+          },
+          "status": {
+            "$ref": "#/components/schemas/PaymentStatus"
+          },
+          "useSavedPaymentOption": {
+            "type": "boolean"
+          },
+          "paymentMethodType": {
+            "$ref": "#/components/schemas/PaymentMethodType"
+          },
+          "paymentUrl": {
+            "type": "string",
+            "example": "paymentUrl"
+          },
+          "txnRefNo": {
+            "type": "string",
+            "example": "4618602124"
+          },
+          "url": {
+            "type": "string",
+            "example": "url"
+          },
+          "extensibleData": {
+            "type": "string",
+            "example": "extensibleData"
+          }
+        }
+      },
+      "PaymentStatus": {
+        "type": "string",
+        "enum": [
+          "SUCCESS",
+          "FAILURE",
+          "PENDING_AUTH"
+        ]
+      },
+      "PaymentMethodType": {
+        "type": "string",
+        "enum": [
+          "EMANDATE_UPI",
+          "NETBANKING",
+          "UPI",
+          "ENACH",
+          "DEBIT_CARD"
+        ]
+      },
+      "GetDisbursementAccountsResponse": {
+        "required": [
+          "accountList",
+          "metadata",
+          "requestId",
+          "response"
+        ],
+        "type": "object",
+        "properties": {
+          "metadata": {
+            "$ref": "#/components/schemas/Metadata"
+          },
+          "response": {
+            "$ref": "#/components/schemas/Response"
+          },
+          "accountList": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AccountDetails"
+            }
+          },
+          "requestId": {
+            "type": "string",
+            "example": "e8cc6822bd4bbb4eb1b9e1b4996fbff8acb"
+          }
+        }
+      },
+      "TriggerDisbursementStatusResponse": {
+        "required": [
+          "metadata",
+          "payment",
+          "requestId",
+          "response"
+        ],
+        "type": "object",
+        "properties": {
+          "metadata": {
+            "$ref": "#/components/schemas/Metadata"
+          },
+          "response": {
+            "$ref": "#/components/schemas/Response"
+          },
+          "requestId": {
+            "type": "string",
+            "example": "e8cc6822bd4bbb4eb1b9e1b4996fbff8acb"
+          },
+          "payment": {
+            "$ref": "#/components/schemas/Payment"
+          }
+        }
+      },
+      "RaiseDisputeResponse": {
+        "required": [
+          "dispute",
+          "metadata",
+          "requestId",
+          "response"
+        ],
+        "type": "object",
+        "properties": {
+          "metadata": {
+            "$ref": "#/components/schemas/Metadata"
+          },
+          "response": {
+            "$ref": "#/components/schemas/Response"
+          },
+          "requestId": {
+            "type": "string",
+            "example": "e8cc6822bd4bbb4eb1b9e1b4996fbff8acb"
+          },
+          "dispute": {
+            "$ref": "#/components/schemas/Dispute"
+          }
+        }
+      },
+      "Dispute": {
+        "required": [
+          "description",
+          "id",
+          "lenderId",
+          "loanId",
+          "status"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "example": "e8cc6822bd4bbb4eb1b9e1b4996fbff8acb"
+          },
+          "lendersDisputeId": {
+            "type": "string",
+            "example": "f3412322bd4bbb4eb1b9e1b4996fbff8acb"
+          },
+          "lenderId": {
+            "type": "string",
+            "example": "OrgId"
+          },
+          "loanId": {
+            "type": "string",
+            "example": "s2412322bd4bbb4eb1b9e1b4996fbff8acb"
+          },
+          "description": {
+            "type": "string",
+            "example": "Amount not disbursed to the account yet"
+          },
+          "status": {
+            "$ref": "#/components/schemas/DisputeStatus"
+          },
+          "url": {
+            "type": "string",
+            "example": "URL where dispute progress can be tracked"
+          },
+          "extensibleData": {
+            "type": "string",
+            "example": "extensibleData"
+          }
+        }
+      },
+      "DisputeStatus": {
+        "type": "string",
+        "enum": [
+          "NEW",
+          "PROCESSING",
+          "NEEDMOREINFO",
+          "RESOLVED",
+          "CLOSED"
+        ]
+      },
+      "DisputeStatusResponse": {
+        "required": [
+          "dispute",
+          "metadata",
+          "requestId",
+          "response"
+        ],
+        "type": "object",
+        "properties": {
+          "metadata": {
+            "$ref": "#/components/schemas/Metadata"
+          },
+          "response": {
+            "$ref": "#/components/schemas/Response"
+          },
+          "requestId": {
+            "type": "string",
+            "example": "e8cc6822bd4bbb4eb1b9e1b4996fbff8acb"
+          },
+          "dispute": {
+            "$ref": "#/components/schemas/Dispute"
+          }
+        }
+      },
+      "GrantLoanResponse": {
+        "required": [
+          "disbursement",
+          "loanId",
+          "loanStatus",
+          "metadata",
+          "repayment",
+          "requestId",
+          "response",
+          "terms"
+        ],
+        "type": "object",
+        "properties": {
+          "metadata": {
+            "$ref": "#/components/schemas/Metadata"
+          },
+          "response": {
+            "$ref": "#/components/schemas/Response"
+          },
+          "requestId": {
+            "type": "string",
+            "example": "e8cc6822bd4bbb4eb1b9e1b4996fbff8acb"
+          },
+          "loanId": {
+            "type": "string",
+            "example": "e8cc6822bd4bbb4eb1b9e1b4996fbff8acb"
+          },
+          "loanStatus": {
+            "$ref": "#/components/schemas/GrantLoanStatus"
+          },
+          "terms": {
+            "$ref": "#/components/schemas/LoanTerms"
+          },
+          "repayment": {
+            "$ref": "#/components/schemas/ChosenRepayment"
+          },
+          "disbursement": {
+            "$ref": "#/components/schemas/ChosenDisbursement"
+          },
+          "rejectionDetails": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/RejectionDetail"
+            }
+          },
+          "actionRequired": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ActionRequired"
+            }
+          }
+        }
+      },
+      "GrantLoanStatus": {
+        "type": "string",
+        "enum": [
+          "GRANTED",
+          "REJECTED",
+          "DEFAULTED",
+          "COMPLETED",
+          "ACTION_REQUIRED"
+        ]
+      },
+      "ChosenRepayment": {
+        "required": [
+          "plan"
+        ],
+        "type": "object",
+        "properties": {
+          "plan": {
+            "$ref": "#/components/schemas/PaymentPlan"
+          }
+        }
+      },
+      "ChosenDisbursement": {
+        "required": [
+          "plan"
+        ],
+        "type": "object",
+        "properties": {
+          "plan": {
+            "$ref": "#/components/schemas/PaymentPlan"
+          },
+          "accountDetails": {
+            "$ref": "#/components/schemas/AccountDetails"
+          }
+        }
+      },
+      "ScheduleType": {
+        "type": "string",
+        "enum": [
+          "ONE_TIME",
+          "RECURRING",
+          "AS_PRESENTED"
+        ]
+      },
+      "Reference": {
+        "required": [
+          "object",
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "object": {
+            "type": "string",
+            "example": "documents"
+          },
+          "value": {
+            "type": "string",
+            "example": "INVOICE_GSTN_INV2011"
+          }
+        }
+      },
+      "LenderOTPResponse": {
+        "required": [
+          "credBlock",
+          "metadata",
+          "requestId",
+          "response"
+        ],
+        "type": "object",
+        "properties": {
+          "metadata": {
+            "$ref": "#/components/schemas/Metadata"
+          },
+          "response": {
+            "$ref": "#/components/schemas/Response"
+          },
+          "requestId": {
+            "type": "string",
+            "example": "e8cc6822bd4bbb4eb1b9e1b4996fbff8acb"
+          },
+          "credBlock": {
+            "$ref": "#/components/schemas/CredentialsBlock"
+          }
+        }
+      },
+      "CredentialsBlock": {
+        "required": [
+          "data",
+          "type"
+        ],
+        "type": "object",
+        "properties": {
+          "type": {
+            "$ref": "#/components/schemas/CredentialsBlockType"
+          },
+          "data": {
+            "$ref": "#/components/schemas/OTPBlock"
+          },
+          "extensibleData": {
+            "type": "string",
+            "example": "extensibleData"
+          }
+        }
+      },
+      "CredentialsBlockType": {
+        "type": "string",
+        "enum": [
+          "OTP"
+        ]
+      },
+      "OTPBlock": {
+        "type": "object",
+        "properties": {
+          "appToken": {
+            "type": "string",
+            "example": "0aBCD7DMr7s"
+          },
+          "otpSessionKey": {
+            "type": "string",
+            "example": "e8cc6822bd4bbb4eb1b9e1b4996fbff8acb"
+          },
+          "maskedPhoneNumber": {
+            "type": "string",
+            "example": "xxxxxx9090"
+          },
+          "url": {
+            "type": "string",
+            "example": "url"
+          },
+          "extensibleData": {
+            "type": "string",
+            "example": "extensibleData"
+          },
+          "otp": {
+            "type": "string",
+            "example": "123455"
+          },
+          "status": {
+            "$ref": "#/components/schemas/OTPBlockStatus"
+          }
+        }
+      },
+      "OTPBlockStatus": {
+        "type": "string",
+        "enum": [
+          "SUCCESS",
+          "INCORRECT_OTP",
+          "INVALID_SESSION"
+        ]
+      },
+      "VerifyLenderOTPResponse": {
+        "required": [
+          "credBlock",
+          "metadata",
+          "requestId",
+          "response"
+        ],
+        "type": "object",
+        "properties": {
+          "metadata": {
+            "$ref": "#/components/schemas/Metadata"
+          },
+          "requestId": {
+            "type": "string",
+            "example": "e8cc6822bd4bbb4eb1b9e1b4996fbff8acb"
+          },
+          "response": {
+            "$ref": "#/components/schemas/Response"
+          },
+          "credBlock": {
+            "$ref": "#/components/schemas/CredentialsBlock"
+          }
+        }
+      },
+      "GetRepaymentPlanResponse": {
+        "required": [
+          "loanId",
+          "metadata",
+          "repaymentPlans",
+          "requestId",
+          "response"
+        ],
+        "type": "object",
+        "properties": {
+          "metadata": {
+            "$ref": "#/components/schemas/Metadata"
+          },
+          "loanId": {
+            "type": "string",
+            "example": "e8cc6822bd4bbb4eb1b9e1b4996fbff8acb"
+          },
+          "requestId": {
+            "type": "string",
+            "example": "e8cc6822bd4bbb4eb1b9e1b4996fbff8acb"
+          },
+          "response": {
+            "$ref": "#/components/schemas/Response"
+          },
+          "plans": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PaymentPlan"
+            }
+          }
+        }
+      },
+      "SetRepaymentPlanResponse": {
+        "required": [
+          "metadata",
+          "plan",
+          "requestId",
+          "response"
+        ],
+        "type": "object",
+        "properties": {
+          "metadata": {
+            "$ref": "#/components/schemas/Metadata"
+          },
+          "requestId": {
+            "type": "string",
+            "example": "e8cc6822bd4bbb4eb1b9e1b4996fbff8acb"
+          },
+          "response": {
+            "$ref": "#/components/schemas/Response"
+          },
+          "plan": {
+            "$ref": "#/components/schemas/PaymentPlan"
+          }
+        }
+      },
+      "SetRepaymentPlanStatusResponse": {
+        "required": [
+          "metadata",
+          "plan",
+          "requestId",
+          "response"
+        ],
+        "type": "object",
+        "properties": {
+          "metadata": {
+            "$ref": "#/components/schemas/Metadata"
+          },
+          "requestId": {
+            "type": "string",
+            "example": "e8cc6822bd4bbb4eb1b9e1b4996fbff8acb"
+          },
+          "response": {
+            "$ref": "#/components/schemas/Response"
+          },
+          "plan": {
+            "$ref": "#/components/schemas/PaymentPlan"
+          }
+        }
+      },
+      "TriggerRepaymentStatusResponse": {
+        "required": [
+          "metadata",
+          "payment",
+          "requestId",
+          "response"
+        ],
+        "type": "object",
+        "properties": {
+          "metadata": {
+            "$ref": "#/components/schemas/Metadata"
+          },
+          "requestId": {
+            "type": "string",
+            "example": "e8cc6822bd4bbb4eb1b9e1b4996fbff8acb"
+          },
+          "response": {
+            "$ref": "#/components/schemas/Response"
+          },
+          "payment": {
+            "$ref": "#/components/schemas/Payment"
+          },
+          "loanId": {
+            "type": "string"
+          }
+        }
+      },
+      "TriggerRepaymentResponse": {
+        "required": [
+          "metadata",
+          "payment",
+          "requestId",
+          "response"
+        ],
+        "type": "object",
+        "properties": {
+          "metadata": {
+            "$ref": "#/components/schemas/Metadata"
+          },
+          "requestId": {
+            "type": "string",
+            "example": "e8cc6822bd4bbb4eb1b9e1b4996fbff8acb"
+          },
+          "response": {
+            "$ref": "#/components/schemas/Response"
+          },
+          "payment": {
+            "$ref": "#/components/schemas/Payment"
+          }
+        }
+      },
+      "CreateLoanApplicationRequest": {
+        "required": [
+          "loanApplications",
+          "metadata",
+          "requestId"
+        ],
+        "type": "object",
+        "properties": {
+          "metadata": {
+            "$ref": "#/components/schemas/Metadata"
+          },
+          "requestId": {
+            "type": "string",
+            "example": "e8cc6822bd4bbb4eb1b9e1b4996fbff8acb"
+          },
+          "loanApplications": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/LoanApplication"
+            }
+          }
+        }
+      },
+      "GenerateOfferRequest": {
+        "required": [
+          "loanApplicationIds",
+          "metadata",
+          "requestId"
+        ],
+        "type": "object",
+        "properties": {
+          "metadata": {
+            "$ref": "#/components/schemas/Metadata"
+          },
+          "requestId": {
+            "type": "string",
+            "example": "t8cc6822bd4bbb4eb1b9e1b4996fbff8acb"
+          },
+          "loanApplicationIds": {
+            "type": "array",
+            "example": [
+              "t8cc6822bd4bbb4eb1b9e1b4996fbff8acb"
+            ],
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "SetOfferRequest": {
+        "required": [
+          "loanApplicationId",
+          "metadata",
+          "offer",
+          "requestId"
+        ],
+        "type": "object",
+        "properties": {
+          "metadata": {
+            "$ref": "#/components/schemas/Metadata"
+          },
+          "requestId": {
+            "type": "string",
+            "example": "12c1ds6822bd4bbb4eb1b9e1b4996fbff8acb"
+          },
+          "offer": {
+            "$ref": "#/components/schemas/Offer"
+          },
+          "loanApplicationId": {
+            "type": "string",
+            "example": "d8cc6822bd4bbb4eb1b9e1b4996fbff8acb"
+          }
+        }
+      },
+      "LenderOTPRequest": {
+        "required": [
+          "credBlock",
+          "loanApplicationIds",
+          "metadata",
+          "requestId"
+        ],
+        "type": "object",
+        "properties": {
+          "metadata": {
+            "$ref": "#/components/schemas/Metadata"
+          },
+          "requestId": {
+            "type": "string",
+            "example": "12c1ds6822bd4bbb4eb1b9e1b4996fbff8acb"
+          },
+          "loanApplicationIds": {
+            "type": "array",
+            "example": [
+              "t8cc6822bd4bbb4eb1b9e1b4996fbff8acb"
+            ],
+            "items": {
+              "type": "string"
+            }
+          },
+          "credBlock": {
+            "$ref": "#/components/schemas/CredentialsBlock"
+          }
+        }
+      },
+      "VerifyLenderOTPRequest": {
+        "required": [
+          "credBlock",
+          "metadata",
+          "requestId"
+        ],
+        "type": "object",
+        "properties": {
+          "metadata": {
+            "$ref": "#/components/schemas/Metadata"
+          },
+          "requestId": {
+            "type": "string",
+            "example": "12c1ds6822bd4bbb4eb1b9e1b4996fbff8acb"
+          },
+          "credBlock": {
+            "$ref": "#/components/schemas/CredentialsBlock"
+          }
+        }
+      },
+      "GrantLoanRequest": {
+        "required": [
+          "loanApplicationId",
+          "metadata",
+          "requestId"
+        ],
+        "type": "object",
+        "properties": {
+          "metadata": {
+            "$ref": "#/components/schemas/Metadata"
+          },
+          "requestId": {
+            "type": "string",
+            "example": "e8cc6822bd4bbb4eb1b9e1b4996fbff8acb"
+          },
+          "loanApplicationId": {
+            "type": "string",
+            "example": "e8cc6822bd4bbb4eb1b9e1b4996fbff8acb"
+          }
+        }
+      },
+      "GetRepaymentPlanRequest": {
+        "required": [
+          "loanId",
+          "metaData",
+          "requestId"
+        ],
+        "type": "object",
+        "properties": {
+          "metaData": {
+            "$ref": "#/components/schemas/Metadata"
+          },
+          "loanId": {
+            "type": "string",
+            "example": "e8cc6822bd4bbb4eb1b9e1b4996fbff8acb"
+          },
+          "requestId": {
+            "type": "string",
+            "example": "e8cc6822bd4bbb4eb1b9e1b4996fbff8acb"
+          }
+        }
+      },
+      "SetRepaymentPlanRequest": {
+        "required": [
+          "metadata",
+          "plan",
+          "requestId"
+        ],
+        "type": "object",
+        "properties": {
+          "metadata": {
+            "$ref": "#/components/schemas/Metadata"
+          },
+          "loanApplicationId": {
+            "type": "string",
+            "example": "e8cc6822bd4bbb4eb1b9e1b4996fbff8acb"
+          },
+          "loanId": {
+            "type": "string",
+            "example": "e8cc6822bd4bbb4eb1b9e1b4996fbff8acb"
+          },
+          "requestId": {
+            "type": "string",
+            "example": "e8cc6822bd4bbb4eb1b9e1b4996fbff8acb"
+          },
+          "plan": {
+            "$ref": "#/components/schemas/RepaymentPlan"
+          }
+        }
+      },
+      "RepaymentPlan": {
+        "required": [
+          "id"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "example": "a8cc6822bd4bbb4eb1b9e1b4996fbff8acb"
+          }
+        }
+      },
+      "SetRepaymentPlanStatusRequest": {
+        "required": [
+          "metadata",
+          "plan",
+          "requestId"
+        ],
+        "type": "object",
+        "properties": {
+          "metadata": {
+            "$ref": "#/components/schemas/Metadata"
+          },
+          "requestId": {
+            "type": "string",
+            "example": "e8cc6822bd4bbb4eb1b9e1b4996fbff8aca"
+          },
+          "plan": {
+            "$ref": "#/components/schemas/PaymentPlan"
+          }
+        }
+      },
+      "TriggerRepaymentStatusRequest": {
+        "required": [
+          "loanId",
+          "metadata",
+          "payment",
+          "requestId"
+        ],
+        "type": "object",
+        "properties": {
+          "metadata": {
+            "$ref": "#/components/schemas/Metadata"
+          },
+          "requestId": {
+            "type": "string",
+            "example": "e8cc6822bd4bbb4eb1b9e1b4996fbff8adf"
+          },
+          "loanId": {
+            "type": "string",
+            "example": "e8cc6822bd4bbb4eb1b9e1b4996fbff8adf"
+          },
+          "payment": {
+            "$ref": "#/components/schemas/Payment"
+          }
+        }
+      },
+      "TriggerRepaymentRequest": {
+        "required": [
+          "loanId",
+          "metadata",
+          "payment",
+          "requestId"
+        ],
+        "type": "object",
+        "properties": {
+          "metadata": {
+            "$ref": "#/components/schemas/Metadata"
+          },
+          "requestId": {
+            "type": "string",
+            "example": "e8cc6822bd4bbb4eb1b9e1b4996fbff8acb"
+          },
+          "loanId": {
+            "type": "string",
+            "example": "e8cc6822bd4bbb4eb1b9e1b4996fbff8acb"
+          },
+          "payment": {
+            "$ref": "#/components/schemas/Payment"
+          }
+        }
+      },
+      "SetDisbursementAccountRequest": {
+        "required": [
+          "account",
+          "metadata",
+          "requestId"
+        ],
+        "type": "object",
+        "properties": {
+          "metadata": {
+            "$ref": "#/components/schemas/Metadata"
+          },
+          "requestId": {
+            "type": "string",
+            "example": "e8cc6822bd4bbb4eb1b9e1b4996fbff8acb"
+          },
+          "loanApplicationId": {
+            "type": "string",
+            "example": "e8cc6822bd4bbb4eb1b9e1b4996fbff8acb"
+          },
+          "loanId": {
+            "type": "string",
+            "example": "e8cc6822bd4bbb4eb1b9e1b4996fbff8acb"
+          },
+          "account": {
+            "$ref": "#/components/schemas/AccountDetails"
+          }
+        }
+      },
+      "TriggerDisbursementRequest": {
+        "required": [
+          "loanId",
+          "metadata",
+          "payment",
+          "requestId"
+        ],
+        "type": "object",
+        "properties": {
+          "metadata": {
+            "$ref": "#/components/schemas/Metadata"
+          },
+          "loanId": {
+            "type": "string",
+            "example": "e8cc6822bd4bbb4eb1b9e1b4996fbff8acb"
+          },
+          "requestId": {
+            "type": "string",
+            "example": "e8cc6822bd4bbb4eb1b9e1b4996fbff8acb"
+          },
+          "payment": {
+            "$ref": "#/components/schemas/Payment"
+          }
+        }
+      },
+      "TriggerDisbursementStatusRequest": {
+        "required": [
+          "loanId",
+          "metadata",
+          "payment",
+          "requestId"
+        ],
+        "type": "object",
+        "properties": {
+          "metadata": {
+            "$ref": "#/components/schemas/Metadata"
+          },
+          "loanId": {
+            "type": "string",
+            "example": "e8cc6822bd4bbb4eb1b9e1b4996fbff8acb"
+          },
+          "requestId": {
+            "type": "string",
+            "example": "e8cc6822bd4bbb4eb1b9e1b4996fbff8acb"
+          },
+          "payment": {
+            "$ref": "#/components/schemas/Payment"
+          }
+        }
+      },
+      "HeartBeatResponse": {
+        "required": [
+          "metadata",
+          "response",
+          "status"
+        ],
+        "type": "object",
+        "properties": {
+          "metadata": {
+            "$ref": "#/components/schemas/Metadata"
+          },
+          "response": {
+            "$ref": "#/components/schemas/Response"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "UP",
+              "DOWN"
+            ]
+          }
+        }
+      },
+      "GetDisbursementPlansRequest": {
+        "required": [
+          "loanId",
+          "metadata",
+          "requestId"
+        ],
+        "type": "object",
+        "properties": {
+          "metadata": {
+            "$ref": "#/components/schemas/Metadata"
+          },
+          "requestId": {
+            "type": "string",
+            "example": "e8cc6822bd4bbb4eb1b9e1b4996fbff8acb"
+          },
+          "loanId": {
+            "type": "string",
+            "example": "e8cc6822bd4bbb4eb1b9e1b4996fbff8acb"
+          }
+        }
+      },
+      "GetDisbursementPlansResponse": {
+        "required": [
+          "metadata",
+          "plans",
+          "requestId",
+          "response"
+        ],
+        "type": "object",
+        "properties": {
+          "metadata": {
+            "$ref": "#/components/schemas/Metadata"
+          },
+          "requestId": {
+            "type": "string",
+            "example": "e8cc6822bd4bbb4eb1b9e1b4996fbff8acb"
+          },
+          "response": {
+            "$ref": "#/components/schemas/Response"
+          },
+          "plans": {
+            "$ref": "#/components/schemas/PaymentPlan"
+          }
+        }
+      },
+      "GetDisbursementAccountsRequest": {
+        "required": [
+          "loanId",
+          "metadata",
+          "requestId"
+        ],
+        "type": "object",
+        "properties": {
+          "metadata": {
+            "$ref": "#/components/schemas/Metadata"
+          },
+          "loanId": {
+            "type": "string"
+          },
+          "requestId": {
+            "type": "string",
+            "example": "e8cc6822bd4bbb4eb1b9e1b4996fbff8acb"
+          }
+        }
+      },
+      "RaiseDisputeRequest": {
+        "required": [
+          "dispute",
+          "loanId",
+          "metadata",
+          "requestId"
+        ],
+        "type": "object",
+        "properties": {
+          "metadata": {
+            "$ref": "#/components/schemas/Metadata"
+          },
+          "loanId": {
+            "type": "string",
+            "example": "e8cc6822bd4bbb4eb1b9e1b4996fbff8acb"
+          },
+          "requestId": {
+            "type": "string",
+            "example": "e8cc6822bd4bbb4eb1b9e1b4996fbff8acb"
+          },
+          "dispute": {
+            "$ref": "#/components/schemas/Dispute"
+          }
+        }
+      },
+      "DisputeStatusRequest": {
+        "required": [
+          "dispute",
+          "metadata",
+          "requestId"
+        ],
+        "type": "object",
+        "properties": {
+          "metadata": {
+            "$ref": "#/components/schemas/Metadata"
+          },
+          "requestId": {
+            "type": "string",
+            "example": "e8cc6822bd4bbb4eb1b9e1b4996fbff8acb"
+          },
+          "dispute": {
+            "$ref": "#/components/schemas/Dispute"
+          }
+        }
+      },
+      "ConfirmRepayment": {
+        "required": [
+          "loanId",
+          "metadata",
+          "payment",
+          "requestId",
+          "response"
+        ],
+        "type": "object",
+        "properties": {
+          "metadata": {
+            "$ref": "#/components/schemas/Metadata"
+          },
+          "requestId": {
+            "type": "string",
+            "example": "e8cc6822bd4bbb4eb1b9e1b4996fbff8acb"
+          },
+          "response": {
+            "$ref": "#/components/schemas/Response"
+          },
+          "payment": {
+            "$ref": "#/components/schemas/Payment"
+          },
+          "loanId": {
+            "type": "string",
+            "example": "e8cc6822bd4bbb4eb1b9e1b4996fbff8acb"
+          }
+        }
+      },
+      "LoanSummaryRequest": {
+        "required": [
+          "loanId",
+          "metadata",
+          "requestId"
+        ],
+        "type": "object",
+        "properties": {
+          "metadata": {
+            "$ref": "#/components/schemas/Metadata"
+          },
+          "requestId": {
+            "type": "string",
+            "example": "e8cc6822bd4bbb4eb1b9e1b4996fbff8acb"
+          },
+          "loanId": {
+            "type": "string",
+            "example": "e8cc6822bd4bbb4eb1b9e1b4996fbff8acb"
+          }
+        }
+      },
+      "GetLoanRequest": {
+        "required": [
+          "loanId",
+          "metadata",
+          "requestId"
+        ],
+        "type": "object",
+        "properties": {
+          "metadata": {
+            "$ref": "#/components/schemas/Metadata"
+          },
+          "requestId": {
+            "type": "string",
+            "example": "e8cc6822bd4bbb4eb1b9e1b4996fbff8acb"
+          },
+          "loanId": {
+            "type": "string",
+            "example": "e8cc6822bd4bbb4eb1b9e1b4996fbff8acb"
+          }
+        }
+      },
+      "LoanStatementRequest": {
+        "required": [
+          "loanId",
+          "metadata",
+          "requestId"
+        ],
+        "type": "object",
+        "properties": {
+          "metadata": {
+            "$ref": "#/components/schemas/Metadata"
+          },
+          "requestId": {
+            "type": "string",
+            "example": "e8cc6822bd4bbb4eb1b9e1b4996fbff8acb"
+          },
+          "loanId": {
+            "type": "string",
+            "example": "e8cc6822bd4bbb4eb1b9e1b4996fbff8acb"
+          },
+          "startDate": {
+            "$ref": "#/components/schemas/UTCTime"
+          },
+          "endDate": {
+            "$ref": "#/components/schemas/UTCTime"
+          }
+        }
+      },
+      "ListLoansRequest": {
+        "required": [
+          "borrower",
+          "metadata",
+          "requestId"
+        ],
+        "type": "object",
+        "properties": {
+          "metadata": {
+            "$ref": "#/components/schemas/Metadata"
+          },
+          "requestId": {
+            "type": "string",
+            "example": "e8cc6822bd4bbb4eb1b9e1b4996fbff8acb"
+          },
+          "borrower": {
+            "$ref": "#/components/schemas/Borrower"
+          },
+          "collateral": {
+            "$ref": "#/components/schemas/Collateral"
+          },
+          "startDate": {
+            "$ref": "#/components/schemas/UTCTime"
+          },
+          "endDate": {
+            "$ref": "#/components/schemas/UTCTime"
+          }
+        }
+      },
+      "Summary": {
+        "required": [
+          "amountDisbursed",
+          "amountRepaid",
+          "currentRepayment",
+          "description",
+          "interestPaid",
+          "interestPending",
+          "nextRepayment",
+          "penaltyPaid",
+          "principalPaid",
+          "principalPending",
+          "tenure"
+        ],
+        "type": "object",
+        "properties": {
+          "nextRepayment": {
+            "$ref": "#/components/schemas/Payment"
+          },
+          "currentRepayment": {
+            "$ref": "#/components/schemas/Payment"
+          },
+          "principalPaid": {
+            "type": "string"
+          },
+          "interestPaid": {
+            "type": "string"
+          },
+          "penaltyPaid": {
+            "type": "string"
+          },
+          "principalPending": {
+            "type": "string"
+          },
+          "interestPending": {
+            "type": "string"
+          },
+          "amountDisbursed": {
+            "type": "string"
+          },
+          "amountRepaid": {
+            "type": "string"
+          },
+          "tenure": {
+            "$ref": "#/components/schemas/LoanTenure"
+          },
+          "description": {
+            "type": "string"
+          }
+        }
+      },
+      "LoanSummaryResponse": {
+        "required": [
+          "createdDate",
+          "endDate",
+          "loanId",
+          "loanStatus",
+          "metadata",
+          "requestId",
+          "response",
+          "startDate",
+          "summary"
+        ],
+        "type": "object",
+        "properties": {
+          "metadata": {
+            "$ref": "#/components/schemas/Metadata"
+          },
+          "response": {
+            "$ref": "#/components/schemas/Response"
+          },
+          "requestId": {
+            "type": "string"
+          },
+          "loanId": {
+            "type": "string"
+          },
+          "loanStatus": {
+            "type": "string",
+            "enum": [
+              "GRANTED",
+              "DEFAULTED",
+              "COMPLETED",
+              "OVERDUE"
+            ]
+          },
+          "createdDate": {
+            "$ref": "#/components/schemas/UTCTime"
+          },
+          "startDate": {
+            "$ref": "#/components/schemas/UTCTime"
+          },
+          "endDate": {
+            "$ref": "#/components/schemas/UTCTime"
+          },
+          "summary": {
+            "$ref": "#/components/schemas/Summary"
+          }
+        }
+      },
+      "GetLoanResponse": {
+        "required": [
+          "applicants",
+          "borrower",
+          "collateral",
+          "createdDate",
+          "disbursement",
+          "endDate",
+          "guarantors",
+          "lender",
+          "loanId",
+          "loanStatus",
+          "metadata",
+          "repayment",
+          "requestId",
+          "response",
+          "startDate",
+          "terms",
+          "type"
+        ],
+        "properties": {
+          "metadata": {
+            "$ref": "#/components/schemas/Metadata"
+          },
+          "requestId": {
+            "type": "string"
+          },
+          "response": {
+            "$ref": "#/components/schemas/Response"
+          },
+          "loanId": {
+            "type": "string"
+          },
+          "loanStatus": {
+            "type": "string",
+            "enum": [
+              "GRANTED",
+              "DEFAULTED",
+              "COMPLETED",
+              "OVERDUE"
+            ]
+          },
+          "createdDate": {
+            "$ref": "#/components/schemas/UTCTime"
+          },
+          "startDate": {
+            "$ref": "#/components/schemas/UTCTime"
+          },
+          "endDate": {
+            "$ref": "#/components/schemas/UTCTime"
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "CASHFLOW",
+              "PERSONAL",
+              "HOME",
+              "VEHICLE",
+              "BUSINESS"
+            ]
+          },
+          "borrower": {
+            "$ref": "#/components/schemas/Borrower"
+          },
+          "lender": {
+            "$ref": "#/components/schemas/Lender"
+          },
+          "collateral": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Collateral"
+            }
+          },
+          "guarantors": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Guarantor"
+            }
+          },
+          "applicants": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Applicant"
+            }
+          },
+          "terms": {
+            "$ref": "#/components/schemas/LoanTerms"
+          },
+          "disbursement": {
+            "$ref": "#/components/schemas/ChosenDisbursement"
+          },
+          "repayment": {
+            "$ref": "#/components/schemas/ChosenRepayment"
+          }
+        }
+      },
+      "LoanStatementResponse": {
+        "required": [
+          "accountStatement",
+          "loanId",
+          "metadata",
+          "requestId",
+          "response"
+        ],
+        "properties": {
+          "metadata": {
+            "$ref": "#/components/schemas/Metadata"
+          },
+          "requestId": {
+            "type": "string"
+          },
+          "response": {
+            "$ref": "#/components/schemas/Response"
+          },
+          "loadId": {
+            "type": "string"
+          },
+          "accountStatement": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Transaction"
+            }
+          }
+        }
+      },
+      "Transaction": {
+        "required": [
+          "amount",
+          "closingBalance",
+          "date",
+          "narration",
+          "txnRefNo",
+          "type"
+        ],
+        "properties": {
+          "date": {
+            "$ref": "#/components/schemas/UTCTime"
+          },
+          "narration": {
+            "type": "string"
+          },
+          "txnRefNo": {
+            "type": "string"
+          },
+          "amount": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "DEPOSIT",
+              "WITHDRAWAL"
+            ]
+          },
+          "closingBalance": {
+            "type": "string"
+          },
+          "url": {
+            "type": "string"
+          },
+          "extensibleData": {
+            "type": "string"
+          }
+        }
+      },
+      "ListLoansResponse": {
+        "required": [
+          "loans",
+          "metadata",
+          "requestId",
+          "response"
+        ],
+        "properties": {
+          "metadata": {
+            "$ref": "#/components/schemas/Metadata"
+          },
+          "requestId": {
+            "type": "string"
+          },
+          "response": {
+            "$ref": "#/components/schemas/Response"
+          },
+          "loans": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/LoanDetail"
+            }
+          }
+        }
+      },
+      "LoanDetail": {
+        "required": [
+          "loanId",
+          "terms"
+        ],
+        "properties": {
+          "loanId": {
+            "type": "string"
+          },
+          "terms": {
+            "$ref": "#/components/schemas/LoanTerms"
+          }
+        }
+      }
+    }
+  }
+}
